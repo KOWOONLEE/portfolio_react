@@ -13,7 +13,7 @@ function Navbar() {
         <div>
           <img className="profileImg" alt="profile_img" src={Profile_img} />
         </div>
-        <h2>KO WOON</h2>
+        <h2>LEE KO WOON</h2>
         <section className="menuBar">
           <p>
             <AiOutlineHome /> Home
@@ -44,7 +44,7 @@ export default Navbar;
 const StyledNavbar = styled.div`
   display: inline-block;
   position: fixed;
-  width: 20%;
+  width: 20vw;
   height: 100%;
   text-align: center;
   background-color: black;
@@ -58,10 +58,10 @@ const StyledNavbar = styled.div`
     margin: 50px 0 20px 0;
   }
   h2 {
-    font-size: 1.8em;
+    font-size: 1.9em;
   }
   .menuBar {
-    font-size: 1.1em;
+    font-size: 1.2em;
     line-height: 1.9em;
     text-align: left;
     margin-left: 3em;

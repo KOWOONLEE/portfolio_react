@@ -9,7 +9,9 @@ function Main() {
     <StyledMain>
       <Navbar />
       <Profile />
-      <About />
+      <div className="mainPage">
+        <About />
+      </div>
     </StyledMain>
   );
 }
@@ -24,4 +26,7 @@ const StyledMain = styled.div`
   /* align-items: stretch; */
   /* flex-direction: row; */
   /* justify-content: space-between; */
+  .mainPage {
+    margin-left: 60px;
+  }
 `;

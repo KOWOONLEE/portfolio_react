@@ -22,7 +22,7 @@ function Profile() {
 
         return result;
       });
-    }, 300);
+    }, 200);
 
     return () => {
       clearInterval(typingInterval);
@@ -37,7 +37,7 @@ function Profile() {
         </div>
         <div className="typingName">
           <h3>KO WOON</h3>
-          <h3>
+          <h3 className="typingword">
             I'm <span>{title}</span>
           </h3>
         </div>
@@ -50,10 +50,10 @@ export default Profile;
 
 const StyledProfile = styled.div`
   display: flex;
-  width: 80%;
+  width: 80vw;
   height: 100%;
   margin-left: 20%;
-  overflow-x: hidden;
+
   /* position: relative; */
 
   .profileBackground {
@@ -67,6 +67,8 @@ const StyledProfile = styled.div`
     width: 80vw;
     height: 100vh;
     object-fit: cover;
+
+    /* overflow-x: hidden; */
   }
 
   /* .typing {
@@ -83,23 +85,11 @@ const StyledProfile = styled.div`
     position: absolute;
     z-index: 2;
     min-width: 300px;
-    /* display: flex;
-    width: 79vw;
-    position: absolute;
+    width: 80vw;
     height: 100vh;
-
-    font-size: 3em;
-    opacity: 0.4;
-    top: 6px;
-    left: 20%;
-    z-index: 2; */
+    overflow-x: hidden;
 
     h3 {
-      /* margin: 0 0 10px 0;
-      font-size: 64px;
-      font-weight: 700;
-      line-height: 56px;
-      color: #fff; */
       /* @keyframes cursor {
         0% {
           opacity: 0;
@@ -111,10 +101,14 @@ const StyledProfile = styled.div`
     }
 
     h3 {
+      display: fixed;
       position: relative;
-      color: black;
-      z-index: 999;
+      color: white;
+      z-index: 99;
       opacity: 1;
+      font-size: 4em;
+      left: 10vw;
+      top: 20vh;
     }
     h3::after {
       content: "";
@@ -129,9 +123,15 @@ const StyledProfile = styled.div`
     background: rgba(5, 13, 24, 0.3);
     position: absolute;
     bottom: 0;
-    /* top: 0; */
-    /* left: 0; */
+    top: 0;
+    left: 0;
     right: 0;
     z-index: 1;
+  }
+  .typingword::after {
+    content: "";
+    margin-left: 0.6rem;
+    border-right: 3px solid white;
+    animation: cusor 0.9s infinite steps(2);
   }
 `;
