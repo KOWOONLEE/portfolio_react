@@ -1,12 +1,13 @@
 import styled from "styled-components";
+import Portfolio from "./Portfolio";
 
 function About() {
   return (
     <>
       <StyledAbout>
         <section>
-          <div className="aboutsection">
-            <div className="paddingInner">
+          <div className="aboutSection">
+            <div className="paddingMargin">
               <h1 id="about">About</h1>
               <h2>Front-end Developer</h2>
               <div style={{ fontSize: "1.2em", lineHeight: "2vh" }}>
@@ -17,7 +18,7 @@ function About() {
                 <p>
                   현실에 안주하지 않고 계속 발전해가는 것이 인생의 목표입니다.
                 </p>
-                <p style={{ marginBottom: "3vh" }}>
+                <p style={{ marginBottom: "5vh" }}>
                   이 시대의 편리함을 책임지는 개발자로서 성장하고 싶습니다.
                 </p>
               </div>
@@ -47,8 +48,8 @@ function About() {
             </div>
           </div>
         </section>
-        <section className="skillsection">
-          <div className="paddingInner">
+        <section className="skillsSection">
+          <div className="paddingMargin">
             <h1 id="skills">Skills</h1>
             <p style={{ fontSize: "1.2em", lineHeight: "3vh" }}>
               현재까지 배우고 사용했던 기술입니다.
@@ -68,37 +69,42 @@ function About() {
             </table>
           </div>
         </section>
-        <section>
-          <h1 id="resume">Resume</h1>
-          <p>이력 및 학력에 대한 설명입니다.</p>
-          <div className="resumetitle">
-            <div>
-              <h3>Education</h3>
-              <div>
-                <h4>경기대학교</h4>
-                <ul>
-                  <li>경제학과 학사 졸업</li>
-                  <li>2011.3 ~ 2016.2</li>
-                </ul>
+        <section className="resumeSection">
+          <div className="paddingMargin">
+            <h1 id="resume">Resume</h1>
+            <p style={{ fontSize: "1.2em", lineHeight: "3vh" }}>
+              이력 및 학력에 대한 설명입니다.
+            </p>
+            <div className="resumetitle">
+              <div className="resumediv">
+                <h3>Education</h3>
+                <div>
+                  <h4>경기대학교</h4>
+                  <ul>
+                    <li>경제학과 학사 졸업</li>
+                    <li>2011.3 ~ 2016.2</li>
+                  </ul>
+                </div>
               </div>
-            </div>
-            <div>
-              <h3>Experience</h3>
-              <div>
-                <h4>Justcode 개발 부트캠프 6기 수료</h4>
-                <ul>
-                  <li>Foundation : Front-end</li>
-                  <li>2022. 08. 01 ~ 2022. 10. 28</li>
-                </ul>
-                <h4>위더스(주)</h4>
-                <ul>
-                  <li>경영관리팀 - 회계, 사무</li>
-                  <li>2019. 05. 27 ~ 2022. 07. 28</li>
-                </ul>
+              <div className="resumediv">
+                <h3>Experience</h3>
+                <div>
+                  <h4>JUSTCODE 개발 부트캠프 6기 수료</h4>
+                  <ul>
+                    <li>Foundation : Front-end</li>
+                    <li>2022. 08. 01 ~ 2022. 10. 28</li>
+                  </ul>
+                  <h4>위더스(주)</h4>
+                  <ul>
+                    <li>경영관리팀 - 회계, 사무</li>
+                    <li>2019. 05. 27 ~ 2022. 07. 28</li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
         </section>
+        <Portfolio />
       </StyledAbout>
     </>
   );
@@ -111,8 +117,9 @@ const StyledAbout = styled.div`
   margin-left: 20%;
   padding: 20px;
 
-  .paddingInner {
+  .paddingMargin {
     padding: 20px 30px 20px 30px;
+    margin-bottom: 20px;
   }
   h1 {
     font-size: 3em;
@@ -123,7 +130,7 @@ const StyledAbout = styled.div`
   h1::after {
     content: "";
     display: block;
-    width: 8vw;
+    width: 5vw;
     border-bottom: 3px solid #38b2ea;
   }
   h2 {
@@ -153,9 +160,52 @@ const StyledAbout = styled.div`
   }
   .resumetitle {
     display: flex;
+    width: 100%;
+  }
+  .resumediv {
+    width: 50%;
+
+    h3 {
+      width: 28%;
+      color: white;
+      background-color: #3b7ea6;
+      font-size: 1.6em;
+      border: 2px solid #3b7ea6;
+      border-radius: 30px;
+      padding: 5px 10px 5px 10px;
+      text-align: center;
+      /* text-shadow: 1.5px 0 #000; */
+    }
+
+    h4 {
+      font-size: 1.4em;
+    }
+    ul {
+      margin-bottom: 30px;
+      padding: 0 0 20px 40px;
+      margin-top: -2px;
+      border-left: 2px solid #1f5297;
+      position: relative;
+    }
+    ul::before {
+      content: "";
+      position: absolute;
+      width: 13px;
+      height: 13px;
+      border-radius: 50px;
+      left: -9px;
+      top: 0;
+      background: #fff;
+      border: 2px solid #1f5297;
+    }
+
+    li {
+      font-size: 1.4em;
+      line-height: 1.5em;
+    }
   }
 
-  .skillsection {
+  .skillsSection {
     background-color: #f4f6fc;
   }
   table {
