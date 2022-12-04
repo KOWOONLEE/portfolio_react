@@ -27,6 +27,6 @@ const StyledMain = styled.div`
   /* flex-direction: row; */
   /* justify-content: space-between; */
   .mainPage {
-    margin-left: 60px;
+    margin: 0 30px 0 30px;
   }
 `;

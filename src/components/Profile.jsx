@@ -30,7 +30,7 @@ function Profile() {
   });
 
   return (
-    <div className="App">
+    <div id="home" className="App">
       <StyledProfile>
         <div className="profileBackground">
           <img className="mainBackground" alt="background_img" src={MainImg} />
@@ -133,5 +133,10 @@ const StyledProfile = styled.div`
     margin-left: 0.6rem;
     border-right: 3px solid white;
     animation: cusor 0.9s infinite steps(2);
+  }
+  .typingword span {
+    padding-bottom: 4px;
+    letter-spacing: 1px;
+    border-bottom: 4px solid #149ddd;
   }
 `;

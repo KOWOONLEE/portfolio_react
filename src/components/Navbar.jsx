@@ -16,22 +16,37 @@ function Navbar() {
         <h2>LEE KO WOON</h2>
         <section className="menuBar">
           <p>
-            <AiOutlineHome /> Home
+            <a href="#home">
+              <span className="icon">
+                <AiOutlineHome />
+              </span>
+              <span className="menuDetail"> Home</span>
+            </a>
           </p>
           <p>
-            <BsPerson /> About
+            <a href="#about">
+              <BsPerson /> About
+            </a>
           </p>
           <p>
-            <FaReact /> Skills
+            <a href="#skills">
+              <FaReact /> Skills
+            </a>
           </p>
           <p>
-            <AiOutlineFile /> Resume
+            <a href="#resume">
+              <AiOutlineFile /> Resume
+            </a>
           </p>
           <p>
-            <FiBookOpen /> Portfolio
+            <a href="#portfolio">
+              <FiBookOpen /> Portfolio
+            </a>
           </p>
           <p>
-            <BsPhone /> Contact
+            <a href="#contact">
+              <BsPhone /> Contact
+            </a>
           </p>
         </section>
       </StyledNavbar>
@@ -65,5 +80,10 @@ const StyledNavbar = styled.div`
     line-height: 1.9em;
     text-align: left;
     margin-left: 3em;
+
+    a {
+      text-decoration: none;
+      color: #aba6a6;
+    }
   }
 `;
