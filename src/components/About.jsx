@@ -5,10 +5,10 @@ function About() {
   return (
     <>
       <StyledAbout>
-        <section>
+        <section id="about">
           <div className="aboutSection">
             <div className="paddingMargin">
-              <h1 id="about">About</h1>
+              <h1>About</h1>
               <h2>Front-end Developer</h2>
               <div style={{ fontSize: "1.2em", lineHeight: "2vh" }}>
                 <p>
@@ -42,16 +42,22 @@ function About() {
                   </a>
                 </li>
                 <li>
-                  <span>Resume:</span> PDF Resume``
+                  <span>Resume:</span> PDF Resume
                 </li>
               </ul>
             </div>
           </div>
         </section>
-        <section className="skillsSection">
+        <section id="skills" className="skillsSection">
           <div className="paddingMargin">
-            <h1 id="skills">Skills</h1>
-            <p style={{ fontSize: "1.2em", lineHeight: "3vh" }}>
+            <h1>Skills</h1>
+            <p
+              style={{
+                fontSize: "1.2em",
+                lineHeight: "3vh",
+                marginBottom: "50px",
+              }}
+            >
               현재까지 배우고 사용했던 기술입니다.
             </p>
             <table>
@@ -69,9 +75,9 @@ function About() {
             </table>
           </div>
         </section>
-        <section className="resumeSection">
+        <section id="resume" className="resumeSection">
           <div className="paddingMargin">
-            <h1 id="resume">Resume</h1>
+            <h1>Resume</h1>
             <p style={{ fontSize: "1.2em", lineHeight: "3vh" }}>
               이력 및 학력에 대한 설명입니다.
             </p>
@@ -118,7 +124,7 @@ const StyledAbout = styled.div`
   padding: 20px;
 
   .paddingMargin {
-    padding: 20px 30px 20px 30px;
+    padding: 30px;
     margin-bottom: 20px;
   }
   h1 {
@@ -214,6 +220,18 @@ const StyledAbout = styled.div`
     align-items: center;
     margin: auto;
     text-align: center;
+    animation: fadeIn 2s ease-in-out;
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 3;
+        transform: none;
+      }
+    }
   }
   th {
     font-size: 1.6em;

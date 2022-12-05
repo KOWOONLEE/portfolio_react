@@ -36,7 +36,7 @@ function Profile() {
           <img className="mainBackground" alt="background_img" src={MainImg} />
         </div>
         <div className="typingName">
-          <h3>KO WOON</h3>
+          <h3>LEE KO WOON</h3>
           <h3 className="typingword">
             I'm <span>{title}</span>
           </h3>
@@ -49,12 +49,23 @@ function Profile() {
 export default Profile;
 
 const StyledProfile = styled.div`
+  @keyframes fadeInLeft {
+    0% {
+      opacity: 0;
+      transform: translate3d(-100%, 0, 0);
+    }
+    to {
+      opacity: 1;
+      transform: translateZ(0);
+    }
+  }
+
   display: flex;
   width: 80vw;
   height: 100%;
   margin-left: 20%;
-
-  /* position: relative; */
+  position: relative;
+  animation: fadeInLeft 1s;
 
   .profileBackground {
     /* display: inline-block; */
@@ -88,17 +99,6 @@ const StyledProfile = styled.div`
     width: 80vw;
     height: 100vh;
     overflow-x: hidden;
-
-    h3 {
-      /* @keyframes cursor {
-        0% {
-          opacity: 0;
-        }
-        100% {
-          opacity: 1;
-        }
-      } */
-    }
 
     h3 {
       display: fixed;

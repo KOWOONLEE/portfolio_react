@@ -1,16 +1,43 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Navbar from "../components/Navbar";
 import Profile from "../components/Profile";
 import styled from "styled-components";
 import About from "../components/About";
 
 function Main() {
+  const [scroll, setScroll] = useState(0);
+  const wheel = useRef(null);
+
+  const onScrollFunction = () => {
+    setScroll(window.scrollY);
+  };
+
+  useEffect(() => {
+    console.log(scroll);
+    scrollFunction();
+  }, [scroll]);
+
+  const scrollFunction = () => {
+    if (scroll > 0 && scroll < 300) {
+      wheel.current?.scrollIntoView({ behavior: "smooth" });
+    } else {
+      return;
+    }
+  };
+
   return (
     <StyledMain>
       <Navbar />
-      <Profile />
-      <div className="mainPage">
-        <About />
+      <div onWheel={onScrollFunction}>
+        <Profile />
+        <div ref={wheel} className="mainPage">
+          <About />
+        </div>
+      </div>
+      <div>
+        <a href="#!" class="topButton">
+          <i class="bi bi-arrow-up-short">i</i>
+        </a>
       </div>
     </StyledMain>
   );

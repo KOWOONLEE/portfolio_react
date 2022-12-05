@@ -10,45 +10,62 @@ function Navbar() {
   return (
     <div className="App">
       <StyledNavbar>
-        <div>
-          <img className="profileImg" alt="profile_img" src={Profile_img} />
+        <div className="navWrap">
+          <div>
+            <img className="profileImg" alt="profile_img" src={Profile_img} />
+          </div>
+          <h2>KO WOON</h2>
+          <section className="menuBar">
+            <li>
+              <a href="#home">
+                <i className="icon">
+                  <AiOutlineHome />
+                </i>
+                <span className="menuDetail"> Home</span>
+              </a>
+            </li>
+            <li>
+              <a href="#about">
+                <i className="icon">
+                  <BsPerson />{" "}
+                </i>
+                <span>About</span>
+              </a>
+            </li>
+            <li>
+              <a href="#skills">
+                <i className="icon">
+                  <FaReact />
+                </i>
+                <span> Skills</span>
+              </a>
+            </li>
+            <li>
+              <a href="#resume">
+                <i className="icon">
+                  <AiOutlineFile />
+                </i>
+                <span>Resume</span>
+              </a>
+            </li>
+            <li>
+              <a href="#portfolio">
+                <i className="icon">
+                  <FiBookOpen />{" "}
+                </i>
+                <span>Portfolio</span>
+              </a>
+            </li>
+            <li>
+              <a href="#contact">
+                <i className="icon">
+                  <BsPhone />
+                </i>
+                <span>Contact</span>
+              </a>
+            </li>
+          </section>
         </div>
-        <h2>LEE KO WOON</h2>
-        <section className="menuBar">
-          <p>
-            <a href="#home">
-              <span className="icon">
-                <AiOutlineHome />
-              </span>
-              <span className="menuDetail"> Home</span>
-            </a>
-          </p>
-          <p>
-            <a href="#about">
-              <BsPerson /> About
-            </a>
-          </p>
-          <p>
-            <a href="#skills">
-              <FaReact /> Skills
-            </a>
-          </p>
-          <p>
-            <a href="#resume">
-              <AiOutlineFile /> Resume
-            </a>
-          </p>
-          <p>
-            <a href="#portfolio">
-              <FiBookOpen /> Portfolio
-            </a>
-          </p>
-          <p>
-            <a href="#contact">
-              <BsPhone /> Contact
-            </a>
-          </p>
-        </section>
       </StyledNavbar>
     </div>
   );
@@ -57,9 +74,22 @@ function Navbar() {
 export default Navbar;
 
 const StyledNavbar = styled.div`
+  animation: fadeInLeft 1s;
+
+  @keyframes fadeInLeft {
+    0% {
+      opacity: 0;
+      transform: translate3d(-100%, 0, 0);
+    }
+    to {
+      opacity: 1;
+      transform: translateZ(0);
+    }
+  }
+
   display: inline-block;
   position: fixed;
-  width: 20vw;
+  width: 20%;
   height: 100%;
   text-align: center;
   background-color: black;
@@ -81,9 +111,21 @@ const StyledNavbar = styled.div`
     text-align: left;
     margin-left: 3em;
 
+    li {
+      list-style: none;
+    }
+
     a {
       text-decoration: none;
       color: #aba6a6;
+    }
+    a:hover {
+      span {
+        color: white;
+      }
+      i {
+        color: #149ddd;
+      }
     }
   }
 `;
