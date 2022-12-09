@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Portfolio from "./Portfolio";
+import BottomToTop from "../components/BottomToTop";
 
 function About() {
   return (
@@ -111,6 +112,7 @@ function About() {
           </div>
         </section>
         <Portfolio />
+        <BottomToTop />
       </StyledAbout>
     </>
   );
@@ -225,7 +227,7 @@ const StyledAbout = styled.div`
     @keyframes fadeIn {
       from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY() (20px);
       }
       to {
         opacity: 3;

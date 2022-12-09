@@ -34,11 +34,6 @@ function Main() {
           <About />
         </div>
       </div>
-      <div>
-        <a href="#!" class="topButton">
-          <i class="bi bi-arrow-up-short">i</i>
-        </a>
-      </div>
     </StyledMain>
   );
 }
