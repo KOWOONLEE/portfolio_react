@@ -13,9 +13,8 @@ function Main() {
   };
 
   useEffect(() => {
-    console.log(scroll);
     scrollFunction();
-  }, [scroll]);
+  }, []);
 
   const scrollFunction = () => {
     if (scroll > 0 && scroll < 300) {

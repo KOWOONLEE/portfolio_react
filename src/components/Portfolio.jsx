@@ -1,7 +1,43 @@
 import styled from "styled-components";
-import secondImg from "../assets/images/2nd_main.png";
+import secondImg from "../assets/images/second_main.png";
 import forthImg from "../assets/images/project/4th_main.png";
+import projectData from "../assets/data/project.json";
+import { useEffect, useState } from "react";
+
 const Portfolio = () => {
+  const projectFillters = [
+    {
+      id: 1,
+      name: "All",
+    },
+    {
+      id: 2,
+      name: "Team Project",
+    },
+    {
+      id: 3,
+      name: "Personal Project",
+    },
+  ];
+  const [projectList, setProjectList] = useState([]);
+  const [isChecked, setIsCheked] = useState(false);
+  const [checkedItems, setCheckedItems] = useState(new Set());
+  const [selectedOption, setSelectedOption] = useState("");
+
+  useEffect(() => {
+    const filteredData = projectData.filter((data) =>
+      data.projectFilter.includes(projectFillters.name)
+    );
+    setProjectList(filteredData);
+  }, [projectFillters.name]);
+
+  const selectChange = (e) => {
+    const value = e.target.value;
+    console.log(value);
+    setSelectedOption(value);
+    setProjectList(projectList);
+  };
+
   return (
     <>
       <StyledPortfolio>
@@ -16,88 +52,39 @@ const Portfolio = () => {
               프로젝트 상세 페이지로 이동해주세요.
             </p>
             <div className="portfolioFilter">
-              <ul>
+              {projectFillters.map((item) => (
+                <label key={item.id}>
+                  <input
+                    type="checkout"
+                    value={item.name}
+                    onClick={selectChange}
+                  />
+                  <ul>
+                    <li>{item.name}</li>
+                  </ul>
+                </label>
+              ))}
+              {/* <ul>
                 <li>All</li>
                 <li>Team Project</li>
                 <li>Personal Project</li>
-              </ul>
+              </ul> */}
             </div>
             <div className="portfolioContainer">
-              <div className="portfolioWrap">
-                <img
-                  src={secondImg}
-                  class="img-fluid"
-                  alt="1st_team_project_main"
-                />
-                <p></p>
-                <h2>일차 一茶</h2>
-                <p class="projectSub">카페 음료 주문 모바일웹 사이트</p>
-                <hr />
-                <p>프로젝트 기술 : React.js, Typescript</p>
-                <p>사이트 소개 : 스마트오더를 이용한 음료 주문</p>
-                <p>
-                  프로젝트 내 역할 : 메인페이지, 매장 검색, 상세페이지 리뷰,
-                  기타 페이지{" "}
-                </p>{" "}
-                <div class="portfolio-links">
-                  <a
-                    href="https://youtu.be/IpHrikE4MsI"
-                    class="portfolio-lightbox"
-                    title="2차 프로젝트 - 공차 모바일 웹 사이트 구현 프로젝트 발표 자료"
-                  >
-                    <i class="bx bx-plus"></i>
-                  </a>
-                  <a href="http://www.naver.com" title="More Details">
-                    <i class="bx bx-link"></i>
-                  </a>
+              {projectData.map((item, idx) => (
+                <div className="portfolioWrap" value="item" key="id">
+                  <img src={item.projectImg} alt="project" />
+                  <h2>{item.projectName}</h2>
+                  <p class="projectSub">{item.projectTitle}</p>
+                  <hr />
+                  <p>프로젝트 기술 : {item.projectSkill}</p>
+                  <p>사이트 소개 : {item.projectIntro}</p>
+                  <p>프로젝트 내 역할 : {item.projectRoll}</p>{" "}
                 </div>
-              </div>
-              <div className="portfolioWrap">
-                <img
-                  src="https://user-images.githubusercontent.com/108816777/197381724-349280a7-42c1-4d2c-8f74-36cc9b602dd3.png"
-                  class="img-fluid"
-                  alt="1st_team_project_main"
-                />
-                <p></p>
-                <h2>HALO</h2>
-                <p class="projectSub">커뮤니티 사이트</p>
-                <hr />
-                <p>프로젝트 기술 : React.js</p>
-                <p>사이트 소개 : 스터디,프로젝트 팀원 모집</p>
-                <p>프로젝트 내 역할 : 로그인, 회원가입, 이용약관</p>
-                <div class="portfolio-links">
-                  <a
-                    href="https://youtu.be/ETs8lwviMBw"
-                    class="portfolio-lightbox"
-                    title="1차 프로젝트 - HALO 사이트 구현 프로젝트 구현 영상"
-                  >
-                    <i class="bx bx-plus"></i>
-                  </a>
-                  <a href="http://www.naver.com" title="More Details">
-                    <i class="bx bx-link"></i>
-                  </a>
-                </div>
-              </div>
-              <div className="portfolioWrap">
-                <img
-                  src={forthImg}
-                  class="img-fluid"
-                  alt="1st_team_project_main"
-                />
-                <p></p>
-                <h2>Mini 프로젝트</h2>
-                <p class="projectSub">Mini 프로젝트</p>
-                <hr />
-                <p>프로젝트 기술 : React.js</p>
-                <p>사이트 소개 : 기업협업 pre-onboarding</p>
-                <p>프로젝트 내 역할 : 로그인, 병원 에약, 예약 조회 </p>
-                <div class="portfolio-links">
-                  <a href="http://www.naver.com" title="More Details">
-                    <i class="bx bx-link"></i>
-                  </a>
-                </div>
-              </div>
+              ))}
             </div>
+
+            <div className="portfolioContainer"></div>
           </div>
         </section>
       </StyledPortfolio>
