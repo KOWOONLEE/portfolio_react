@@ -56,7 +56,7 @@ const Portfolio = () => {
                 <label key={item.id}>
                   <input
                     type="checkout"
-                    value={item.name}
+                    value={selectedOption}
                     onClick={selectChange}
                   />
                   <ul>
@@ -64,6 +64,23 @@ const Portfolio = () => {
                   </ul>
                 </label>
               ))}
+              {projectList
+                .filter((val) => {
+                  if (selectedOption === projectFillters.name) {
+                    return val;
+                  }
+                })
+                .map((item, idx) => (
+                  <div className="portfolioWrap" value="item" key="id">
+                    <img src={item.projectImg} alt="project" />
+                    <h2>{item.projectName}</h2>
+                    <p class="projectSub">{item.projectTitle}</p>
+                    <hr />
+                    <p>프로젝트 기술 : {item.projectSkill}</p>
+                    <p>사이트 소개 : {item.projectIntro}</p>
+                    <p>프로젝트 내 역할 : {item.projectRoll}</p>{" "}
+                  </div>
+                ))}
               {/* <ul>
                 <li>All</li>
                 <li>Team Project</li>
