@@ -3,7 +3,9 @@ import secondImg from "../assets/images/second_main.png";
 import forthImg from "../assets/images/project/4th_main.png";
 import projectData from "../assets/data/project.json";
 import { useEffect, useState } from "react";
+import { ConfigProvider, Collapse, Radio } from "antd";
 
+const { Panel } = Collapse;
 const Portfolio = () => {
   const projectFillters = [
     {
@@ -24,12 +26,29 @@ const Portfolio = () => {
   const [checkedItems, setCheckedItems] = useState(new Set());
   const [selectedOption, setSelectedOption] = useState("");
 
+  // useEffect(() => {
+  //   const filteredData = projectData.filter((data) =>
+  //     data.projectFilter.includes(projectFillters.name)
+  //   );
+  //   setProjectList(filteredData);
+  // }, [projectFillters.name]);
+
+  // const fillterdByTag = () => {
+  //   if (selectedOption === projectFillters.name) {
+  //     return projectList.filter((item) =>
+  //       item.projectFilter.includes(selectedOption)
+  //     );
+  //   }
+  // };
+
+  const filterd = [...projectList];
   useEffect(() => {
-    const filteredData = projectData.filter((data) =>
-      data.projectFilter.includes(projectFillters.name)
+    const results = filterd.filter((item) =>
+      item.projectFilter.includes(selectedOption)
     );
-    setProjectList(filteredData);
-  }, [projectFillters.name]);
+    setProjectList(results);
+    return () => setProjectList(filterd);
+  }, [selectedOption]);
 
   const selectChange = (e) => {
     const value = e.target.value;
@@ -38,6 +57,12 @@ const Portfolio = () => {
     setProjectList(projectList);
   };
 
+  const onChange = (e) => {
+    console.log(`radio checked:${e.target.value}`);
+    setSelectedOption(e.target.value);
+    console.log(selectedOption);
+    setProjectList(filterd);
+  };
   return (
     <>
       <StyledPortfolio>
@@ -52,23 +77,44 @@ const Portfolio = () => {
               프로젝트 상세 페이지로 이동해주세요.
             </p>
             <div className="portfolioFilter">
-              {projectFillters.map((item) => (
-                <label key={item.id}>
-                  <input
-                    type="checkout"
-                    value={selectedOption}
-                    onClick={selectChange}
-                  />
-                  <ul>
-                    <li>{item.name}</li>
-                  </ul>
-                </label>
+              <ConfigProvider
+                theme={{
+                  components: {
+                    Radio: {
+                      colorPrimary: "#38b2ea",
+                    },
+                  },
+                }}
+              >
+                <Radio.Group
+                  className="radiostyle"
+                  onChange={onChange}
+                  defaultValue="1"
+                  buttonStyle="solid"
+                >
+                  {projectFillters.map((item) => (
+                    <Radio.Button key={item.id} value={`${item.id}`}>
+                      {item.name}
+                    </Radio.Button>
+                  ))}
+                </Radio.Group>
+              </ConfigProvider>
+              {projectList.map((item, idx) => (
+                <div className="portfolioWrap" value="item" key="id">
+                  <img src={item.projectImg} alt="project" />
+                  <h2>{item.projectName}</h2>
+                  <p class="projectSub">{item.projectTitle}</p>
+                  <hr />
+                  <p>프로젝트 기술 : {item.projectSkill}</p>
+                  <p>사이트 소개 : {item.projectIntro}</p>
+                  <p>프로젝트 내 역할 : {item.projectRoll}</p>{" "}
+                </div>
               ))}
               {projectList
                 .filter((val) => {
                   if (selectedOption === projectFillters.name) {
                     return val;
-                  }
+                  } else return val;
                 })
                 .map((item, idx) => (
                   <div className="portfolioWrap" value="item" key="id">
@@ -119,6 +165,15 @@ const StyledPortfolio = styled.div`
   .portfolioContainer {
     display: flex;
     justify-content: center;
+  }
+  .radiostyle {
+    display: flex;
+    width: 35vw;
+    background-color: white;
+    text-align: center;
+    align-items: center;
+    padding: 0 20px 0 23px;
+    border-radius: 30px;
   }
   .portfolioFilter {
     display: flex;
