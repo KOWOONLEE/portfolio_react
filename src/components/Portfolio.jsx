@@ -2,10 +2,10 @@ import styled from "styled-components";
 import secondImg from "../assets/images/second_main.png";
 import forthImg from "../assets/images/project/4th_main.png";
 import projectData from "../assets/data/project.json";
-import { useEffect, useState } from "react";
-import { ConfigProvider, Collapse, Radio } from "antd";
+import React, { useEffect, useState } from "react";
+import { ConfigProvider, Radio } from "antd";
+import { FaLaravel } from "react-icons/fa";
 
-const { Panel } = Collapse;
 const Portfolio = () => {
   const projectFillters = [
     {
@@ -21,10 +21,18 @@ const Portfolio = () => {
       name: "Personal Project",
     },
   ];
+
   const [projectList, setProjectList] = useState([]);
   const [isChecked, setIsCheked] = useState(false);
   const [checkedItems, setCheckedItems] = useState(new Set());
   const [selectedOption, setSelectedOption] = useState("");
+
+  // useEffect(() => {
+  //   const filteredData = projectData.filter((item) =>
+  //     item.projectFilter.includes(projectFillters.name)
+  //   );
+  //   setProjectList(filteredData);
+  // }, [projectFillters.name]);
 
   // useEffect(() => {
   //   const filteredData = projectData.filter((data) =>
@@ -44,24 +52,25 @@ const Portfolio = () => {
   const filterd = [...projectList];
   useEffect(() => {
     const results = filterd.filter((item) =>
-      item.projectFilter.includes(selectedOption)
+      item.projectFilter.includes(projectFillters.name)
     );
     setProjectList(results);
-    return () => setProjectList(filterd);
-  }, [selectedOption]);
+    console.log(projectList);
 
-  const selectChange = (e) => {
-    const value = e.target.value;
-    console.log(value);
-    setSelectedOption(value);
-    setProjectList(projectList);
-  };
+    // return () => setProjectList(filterd);
+  }, [projectFillters.name]);
+
+  // const selectChange = (e) => {
+  //   const value = e.target.value;
+  //   setSelectedOption(value);
+  //   setProjectList(projectList);
+  // };
 
   const onChange = (e) => {
     console.log(`radio checked:${e.target.value}`);
-    setSelectedOption(e.target.value);
-    console.log(selectedOption);
-    setProjectList(filterd);
+    const value = e.target.value;
+    setSelectedOption(value);
+    setProjectList(projectList);
   };
   return (
     <>
@@ -93,7 +102,7 @@ const Portfolio = () => {
                   buttonStyle="solid"
                 >
                   {projectFillters.map((item) => (
-                    <Radio.Button key={item.id} value={`${item.id}`}>
+                    <Radio.Button key={item.id} value={selectedOption}>
                       {item.name}
                     </Radio.Button>
                   ))}
@@ -110,7 +119,7 @@ const Portfolio = () => {
                   <p>프로젝트 내 역할 : {item.projectRoll}</p>{" "}
                 </div>
               ))}
-              {projectList
+              {/* {projectList
                 .filter((val) => {
                   if (selectedOption === projectFillters.name) {
                     return val;
@@ -126,7 +135,7 @@ const Portfolio = () => {
                     <p>사이트 소개 : {item.projectIntro}</p>
                     <p>프로젝트 내 역할 : {item.projectRoll}</p>{" "}
                   </div>
-                ))}
+                ))} */}
               {/* <ul>
                 <li>All</li>
                 <li>Team Project</li>
