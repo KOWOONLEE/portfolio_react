@@ -5,6 +5,7 @@ import { AiOutlineFile, AiOutlineHome } from "react-icons/ai";
 import { BsPerson, BsPhone } from "react-icons/bs";
 import { FaReact } from "react-icons/fa";
 import { FiBookOpen } from "react-icons/fi";
+import { Link } from "react-scroll";
 
 function Navbar() {
   return (
@@ -17,52 +18,52 @@ function Navbar() {
           <h2>KO WOON</h2>
           <section className="menuBar">
             <li>
-              <a href="#home">
+              <Link to="home" spy={true} smooth={true}>
                 <i className="icon">
                   <AiOutlineHome />
                 </i>
                 <span className="menuDetail"> Home</span>
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#about">
+              <Link to="about" spy={true} smooth={true}>
                 <i className="icon">
                   <BsPerson />{" "}
                 </i>
                 <span>About</span>
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#skills">
+              <Link to="skills" spy={true} smooth={true}>
                 <i className="icon">
                   <FaReact />
                 </i>
                 <span> Skills</span>
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#resume">
+              <Link to="resume" spy={true} smooth={true}>
                 <i className="icon">
                   <AiOutlineFile />
                 </i>
                 <span>Resume</span>
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#portfolio">
+              <Link to="portfolio" spy={true} smooth={true}>
                 <i className="icon">
                   <FiBookOpen />{" "}
                 </i>
                 <span>Portfolio</span>
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#contact">
+              <Link to="contact" spy={true} smooth={true}>
                 <i className="icon">
                   <BsPhone />
                 </i>
                 <span>Contact</span>
-              </a>
+              </Link>
             </li>
           </section>
         </div>

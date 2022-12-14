@@ -26,6 +26,14 @@ const Portfolio = () => {
   const [isChecked, setIsCheked] = useState(false);
   const [checkedItems, setCheckedItems] = useState(new Set());
   const [selectedOption, setSelectedOption] = useState("");
+  const [isHovering, setIsHovering] = useState(false);
+
+  const handleMouseOver = () => {
+    setIsHovering(true);
+  };
+  const handleMouseOut = () => {
+    setIsHovering(false);
+  };
 
   // useEffect(() => {
   //   const filteredData = projectData.filter((item) =>
@@ -108,8 +116,14 @@ const Portfolio = () => {
                   ))}
                 </Radio.Group>
               </ConfigProvider>
-              {projectList.map((item, idx) => (
-                <div className="portfolioWrap" value="item" key="id">
+              {/* {projectList.map((item, idx) => (
+                // <div className="portfolioWrap" value="item" key="id">
+                <div
+                  onMouseEnter={handleMouseOver}
+                  onMouseLeave={handleMouseOut}
+                  value="item"
+                  key="id"
+                >
                   <img src={item.projectImg} alt="project" />
                   <h2>{item.projectName}</h2>
                   <p class="projectSub">{item.projectTitle}</p>
@@ -118,7 +132,7 @@ const Portfolio = () => {
                   <p>사이트 소개 : {item.projectIntro}</p>
                   <p>프로젝트 내 역할 : {item.projectRoll}</p>{" "}
                 </div>
-              ))}
+              ))} */}
               {/* {projectList
                 .filter((val) => {
                   if (selectedOption === projectFillters.name) {
@@ -142,9 +156,21 @@ const Portfolio = () => {
                 <li>Personal Project</li>
               </ul> */}
             </div>
-            <div className="portfolioContainer">
+            <div
+              className="portfolioContainer"
+              // className={
+              //   isHovering ? "portfolioWrapLink" : "portfolioContainer"
+              // }
+            >
               {projectData.map((item, idx) => (
-                <div className="portfolioWrap" value="item" key="id">
+                <div
+                  className={isHovering ? "portfolioWrapLink" : "portfolioWrap"}
+                  value="item"
+                  key="item"
+                  onMouseOver={handleMouseOver}
+                  onMouseOut={handleMouseOut}
+                >
+                  {/* <div className="portfolioWrap" value="item" key="id"> */}
                   <img src={item.projectImg} alt="project" />
                   <h2>{item.projectName}</h2>
                   <p class="projectSub">{item.projectTitle}</p>
@@ -227,5 +253,16 @@ const StyledPortfolio = styled.div`
     img {
       width: 100%;
     }
+  }
+  /* .portfolioWrap:hover {
+    transform: scale(1.2);
+    border: 2px solid #38b2ea;
+    z-index: 999;
+  } */
+  .portfolioWrapLink {
+    transform: scale(1.2);
+    border: 2px solid #38b2ea;
+    z-index: 999;
+    opacity: 0.5;
   }
 `;
