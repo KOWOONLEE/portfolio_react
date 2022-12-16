@@ -66,6 +66,11 @@ function Navbar() {
               </Link>
             </li>
           </section>
+          <section>
+            <li>
+              <span>메인페이지로 이동</span>
+            </li>
+          </section>
         </div>
       </StyledNavbar>
     </div>

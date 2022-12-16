@@ -5,8 +5,10 @@ import projectData from "../assets/data/project.json";
 import React, { useEffect, useState } from "react";
 import { ConfigProvider, Radio } from "antd";
 import { FaLaravel } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 const Portfolio = () => {
+  const navigate = useNavigate();
   const projectFillters = [
     {
       id: 1,
@@ -164,11 +166,12 @@ const Portfolio = () => {
             >
               {projectData.map((item, idx) => (
                 <div
-                  className={isHovering ? "portfolioWrapLink" : "portfolioWrap"}
+                  className="portfolioWrap"
                   value="item"
                   key="item"
-                  onMouseOver={handleMouseOver}
-                  onMouseOut={handleMouseOut}
+                  onClick={() => {
+                    navigate(`/project/${item.id}`);
+                  }}
                 >
                   {/* <div className="portfolioWrap" value="item" key="id"> */}
                   <img src={item.projectImg} alt="project" />
@@ -244,6 +247,7 @@ const StyledPortfolio = styled.div`
     height: 100%;
     transition: 0.3s;
     position: relative;
+    color: black;
     background-color: white;
     margin: 15px;
     padding: 10px;
@@ -254,15 +258,15 @@ const StyledPortfolio = styled.div`
       width: 100%;
     }
   }
-  /* .portfolioWrap:hover {
+  .portfolioWrap:hover {
     transform: scale(1.2);
     border: 2px solid #38b2ea;
     z-index: 999;
-  } */
-  .portfolioWrapLink {
+  }
+  /* .portfolioWrapLink {
     transform: scale(1.2);
     border: 2px solid #38b2ea;
     z-index: 999;
     opacity: 0.5;
-  }
+  } */
 `;
