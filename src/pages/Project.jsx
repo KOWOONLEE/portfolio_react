@@ -3,6 +3,13 @@ import Slider from "react-slick";
 import styled from "styled-components";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import secondMain from "../assets/images/project/second/second_main.png";
+import secondReview from "../assets/images/project/second/second_review.png";
+import secondSearch from "../assets/images/project/second/second_search.png";
+import secondMap from "../assets/images/project/second/second_map.png";
+import secondMain2 from "../assets/images/project/second/second_main_2.png";
+import { AiFillGithub } from "react-icons/ai";
+import { AiOutlineFileText } from "react-icons/ai";
 
 const Project = ({ project, setProject }) => {
   const { id } = useParams();
@@ -15,6 +22,7 @@ const Project = ({ project, setProject }) => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    autoplay: true,
   };
 
   return (
@@ -29,29 +37,72 @@ const Project = ({ project, setProject }) => {
       </div>
       <div className="contentWrap">
         <div className="slideImg">
-          안녕하세요
           <Slider {...settings}>
             <div>
-              <h3>1</h3>
+              <img src={secondMain} alt="second_main" />
             </div>
             <div>
-              <h3>2</h3>
+              <img src={secondReview} alt="second_main" />
             </div>
             <div>
-              <h3>3</h3>
+              <img src={secondSearch} alt="second_main" />
             </div>
             <div>
-              <h3>4</h3>
+              <img src={secondMap} alt="second_main" />
             </div>
             <div>
-              <h3>5</h3>
-            </div>
-            <div>
-              <h3>6</h3>
+              <img src={secondMain2} alt="second_main" />
             </div>
           </Slider>
         </div>
-        <div className="slideContent">내용 블라블라</div>
+        <div className="slideContent">
+          <div className="slideDetail">
+            <h2>Project Information</h2>
+            <hr />
+            <ul>
+              <li>
+                <strong>Category:</strong> Team project
+              </li>
+              <li>
+                <strong>Project date:</strong> 22.09.19 ~ 22.09.29
+              </li>
+              <li>
+                <strong>구성원:</strong> front-end 3명, back-end 1명
+              </li>
+              <li>
+                <strong>Role:</strong> 메인화면, 매장 검색, 매장지도,
+                <br />
+                상세페이지 내 리뷰, 기타페이지
+              </li>
+              <li>
+                <strong>
+                  Project Github-Repo:
+                  <br />
+                  <a href="https://github.com/KOWOONLEE/justcode-6-2nd-team1-front">
+                    <AiFillGithub /> 2차 프로젝트 git-repo로 이동
+                  </a>
+                </strong>
+              </li>
+              <li>
+                <strong>
+                  Project Vlog-Site :
+                  <br />
+                  <a href="https://velog.io/@kkk5689/2차-프로젝트-카페-홈페이지-클론-공차-1진행과정">
+                    <AiOutlineFileText /> 2차 프로젝트 회고록 - 1.진행과정
+                  </a>
+                  <br />
+                  <a href="https://velog.io/@kkk5689/2차-프로젝트-카페-홈페이지-클론-공차-메인페이지-매장-검색-리뷰-작성-2상세코드">
+                    <AiOutlineFileText /> 2차 프로젝트 회고록 - 2.상세코드
+                  </a>
+                  <br />
+                  <a href="https://velog.io/@kkk5689/2차-프로젝트-카페-홈페이지-클론-공차-3-회고록">
+                    <AiOutlineFileText /> 2차 프로젝트 회고록 - 3.회고록
+                  </a>
+                </strong>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
     </StyledProject>
   );
@@ -100,12 +151,58 @@ const StyledProject = styled.div`
     margin: 0 auto;
   }
   .slideImg {
-    width: 70%;
-    height: 70vh;
-    background-color: #38b2ea;
+    display: inline-block;
+    width: 55%;
+    height: 80vh;
+    margin-right: 5%;
+    /* border: 3px solid #38b2ea; */
+    /* background-color: #38b2ea; */
+    padding: 50px;
+
+    img {
+      width: 45%;
+      height: 90%;
+      object-fit: cover;
+      align-items: center;
+      margin: 0 auto;
+      border: 1px solid gray;
+    }
   }
   .slideContent {
-    width: 30%;
-    background-color: #f6a7b4;
+    width: 40%;
+    /* background-color: #f6a7b4; */
+    /* border: 1px solid #f6a7b4; */
+  }
+  .slideDetail {
+    height: 60vh;
+    margin-top: 20px;
+    padding: 30px;
+    box-shadow: 0px 0 30px #38b2ea;
+    /* box-shadow: 0px 0 30px rgb(5 13 24 / 8%); */
+
+    li {
+      font-size: 1.1em;
+      line-height: 33px;
+    }
+    a {
+      color: #38b2ea;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    a:hover {
+      color: #f6a7b4;
+    }
+  }
+  .slick-slider {
+    /* margin: 0px; */
+    /* padding: 30px; */
+  }
+  .slick-track {
+    margin: 0;
+  }
+  .slick-prev:before,
+  .slick-next:before {
+    font-size: 25px;
+    color: #38b2ea;
   }
 `;
