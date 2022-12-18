@@ -1,3 +1,4 @@
+import DetailNav from "../components/DetailNav";
 import { useParams } from "react-router-dom";
 import Slider from "react-slick";
 import styled from "styled-components";
@@ -27,22 +28,17 @@ const Project = ({ project, setProject }) => {
 
   return (
     <StyledProject>
-      <div className="projectNav">
-        <div>
-          <h2> PROJECT DETAILS</h2>
-        </div>
-        <div className="sideMenu">
-          <a href="/">Main Page</a> <span>/ Portfolio Details </span>
-        </div>
-      </div>
+      <DetailNav />
       <div className="contentWrap">
         <div className="slideImg">
           <Slider {...settings}>
             <div>
               <img src={secondMain} alt="second_main" />
+              ㅇ쩍어지ㅏ얼미넝ㄹ먼ㅇ리먼이라ㅓㅁㅇㄹ
             </div>
             <div>
               <img src={secondReview} alt="second_main" />
+              낭러니ㅏ엇ㅁ미ㅏㄷ너시
             </div>
             <div>
               <img src={secondSearch} alt="second_main" />
@@ -58,6 +54,7 @@ const Project = ({ project, setProject }) => {
         <div className="slideContent">
           <div className="slideDetail">
             <h2>Project Information</h2>
+            <h4>일차 一茶 : 카페 음료 주문 모바일웹 사이트 </h4>
             <hr />
             <ul>
               <li>
@@ -115,36 +112,6 @@ const StyledProject = styled.div`
   width: 100%;
   height: 100%;
 
-  .projectNav {
-    display: flex;
-    width: 90%;
-    height: 10vh;
-    background-color: #f0eeee;
-    align-items: center;
-    margin: 0 auto;
-    padding: 0 20px 0 20px;
-    box-shadow: 0 5px 5px -4px gray;
-    justify-content: space-between;
-
-    h2 {
-      /* font-family: "Kanit", sans-serif; */
-      font-size: 1.7em;
-      font-weight: 600;
-      color: #205878;
-      text-shadow: 1px 1px 1px #205878;
-    }
-  }
-  .sideMenu {
-    font-size: 1.2em;
-    a {
-      text-decoration: none;
-      color: #38b2ea;
-      font-weight: bold;
-    }
-    a:hover {
-      color: #f6a7b4;
-    }
-  }
   .contentWrap {
     display: flex;
     width: 90%;
@@ -157,10 +124,10 @@ const StyledProject = styled.div`
     margin-right: 5%;
     /* border: 3px solid #38b2ea; */
     /* background-color: #38b2ea; */
-    padding: 50px;
+    padding: 40px;
 
     img {
-      width: 45%;
+      width: 50%;
       height: 90%;
       object-fit: cover;
       align-items: center;
@@ -174,15 +141,23 @@ const StyledProject = styled.div`
     /* border: 1px solid #f6a7b4; */
   }
   .slideDetail {
-    height: 60vh;
+    height: 55vh;
     margin-top: 20px;
     padding: 30px;
     box-shadow: 0px 0 30px #38b2ea;
     /* box-shadow: 0px 0 30px rgb(5 13 24 / 8%); */
-
+    h2 {
+      font-size: 1.6em;
+      text-align: center;
+      line-height: 0.2;
+    }
+    h4 {
+      text-align: center;
+      color: #205878;
+    }
     li {
-      font-size: 1.1em;
-      line-height: 33px;
+      font-size: 1em;
+      line-height: 29px;
     }
     a {
       color: #38b2ea;
