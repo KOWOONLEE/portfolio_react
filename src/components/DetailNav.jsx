@@ -1,8 +1,13 @@
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 const DetailNav = () => {
   const navigate = useNavigate();
+  const [firstHover, setFirstHover] = useState("");
+  const [secondHover, setSecondHover] = useState("");
+  const [thirdHover, setThirdHover] = useState("");
+  const [fourthHover, setFourthHover] = useState("");
 
   return (
     <StyledNav>
@@ -12,30 +17,47 @@ const DetailNav = () => {
         </div>
         <div className="middleMenu">
           <span
-            onClick={() => {
-              navigate("/project/1st");
+            onMouseEnter={() => {
+              setFirstHover(true);
             }}
+            onMouseLeave={() => {
+              setFirstHover(false);
+            }}
+            onClick={() => navigate("/project/first")}
           >
+            {" "}
             first
           </span>
           <span
-            onClick={() => {
-              navigate("/project/2nd");
+            onMouseEnter={() => {
+              setSecondHover(true);
             }}
+            onMouseLeave={() => {
+              setSecondHover(false);
+            }}
+            onClick={() => navigate("/project/second")}
           >
             second
           </span>
           <span
-            onClick={() => {
-              navigate("/project/3rd");
+            onMouseEnter={() => {
+              setThirdHover(true);
             }}
+            onMouseLeave={() => {
+              setThirdHover(false);
+            }}
+            onClick={() => navigate("/project/third")}
           >
             third
           </span>
           <span
-            onClick={() => {
-              navigate("/project/4th");
+            onMouseEnter={() => {
+              setFourthHover(true);
             }}
+            onMouseLeave={() => {
+              setFourthHover(false);
+            }}
+            onClick={() => navigate("/project/fourth")}
           >
             fourth
           </span>
@@ -44,6 +66,36 @@ const DetailNav = () => {
           <a href="/">Main Page로 이동</a> <span>/ Portfolio Details </span>
         </div>
       </div>
+      <Divhover>
+        {firstHover ? (
+          <div className="first">
+            <span> Hola - 스터디모집 커뮤니케이션 사이트 제작</span>
+          </div>
+        ) : (
+          ""
+        )}
+        {secondHover ? (
+          <div className="first">
+            <span> 일차 - 카페 모바일 웹 사이트 제작</span>
+          </div>
+        ) : (
+          ""
+        )}
+        {thirdHover ? (
+          <div className="first">
+            <span> Mini 프로젝트 - 오디오플레이어 제작</span>
+          </div>
+        ) : (
+          ""
+        )}
+        {fourthHover ? (
+          <div className="first">
+            <span> Mini 프로젝트 - 병원예약 프로그램</span>
+          </div>
+        ) : (
+          ""
+        )}
+      </Divhover>
     </StyledNav>
   );
 };
@@ -96,6 +148,45 @@ const StyledNav = styled.div`
     }
     span {
       color: #d9d2d2;
+    }
+  }
+`;
+const Divhover = styled.div`
+  height: 20px;
+  /* background-color: blue; */
+  color: black;
+  transition: top 1s ease-in; // trasition 으로 top 이동시 자연스럽게 만들어 주자
+  top: 20px; // 호버메시지의 원래 위치
+
+  .first {
+    display: flex;
+    background-color: rgb(0, 0, 0, 0.5);
+    color: white;
+    width: 30vw;
+    height: 50px;
+    margin: 0 auto;
+    align-items: center;
+    border-radius: 10px;
+    top: 0px;
+    animation-duration: 1s;
+    animation-name: fadeout;
+
+    span {
+      font-size: 1.2em;
+      font-weight: bold;
+      text-align: center;
+      margin: 0 auto;
+    }
+  }
+
+  @keyframes fadeout {
+    // fade-out시 opacity를 흐릿하다가 선명하기 만들자
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
     }
   }
 `;
