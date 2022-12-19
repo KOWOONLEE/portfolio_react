@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import Portfolio from "./Portfolio";
 import BottomToTop from "../components/BottomToTop";
+import Contact from "./Contact";
 
 function About() {
   return (
@@ -112,6 +113,7 @@ function About() {
           </div>
         </section>
         <Portfolio />
+        <Contact />
         <BottomToTop />
       </StyledAbout>
     </>

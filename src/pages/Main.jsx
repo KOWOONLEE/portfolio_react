@@ -5,31 +5,12 @@ import styled from "styled-components";
 import About from "../components/About";
 
 function Main() {
-  const [scroll, setScroll] = useState(0);
-  const wheel = useRef(null);
-
-  const onScrollFunction = () => {
-    setScroll(window.scrollY);
-  };
-
-  useEffect(() => {
-    scrollFunction();
-  }, []);
-
-  const scrollFunction = () => {
-    if (scroll > 0 && scroll < 300) {
-      wheel.current?.scrollIntoView({ behavior: "smooth" });
-    } else {
-      return;
-    }
-  };
-
   return (
     <StyledMain>
       <Navbar />
-      <div onWheel={onScrollFunction}>
+      <div>
         <Profile />
-        <div ref={wheel} className="mainPage">
+        <div className="mainPage">
           <About />
         </div>
       </div>

@@ -85,7 +85,7 @@ const Portfolio = () => {
   return (
     <>
       <StyledPortfolio>
-        <section className="portfolioSection">
+        <section id="portfolio" className="portfolioSection">
           <div className="paddingMargin">
             <h1>Portfolio</h1>
             <p style={{ fontSize: "1.2em", lineHeight: "3vh" }}>
