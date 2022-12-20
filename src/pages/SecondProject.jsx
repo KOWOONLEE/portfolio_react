@@ -4,15 +4,14 @@ import Slider from "react-slick";
 import styled from "styled-components";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import secondMain from "../assets/images/project/second/second_main.png";
 import secondReview from "../assets/images/project/second/second_review.png";
 import secondSearch from "../assets/images/project/second/second_search.png";
 import secondMap from "../assets/images/project/second/second_map.png";
-import secondMain2 from "../assets/images/project/second/second_main_2.png";
+import secondMain from "../assets/images/project/second/second_main_2.png";
 import { AiFillGithub } from "react-icons/ai";
 import { AiOutlineFileText } from "react-icons/ai";
 
-const FirstProject = ({ project, setProject }) => {
+const SecondProject = ({ project, setProject }) => {
   const { id } = useParams();
   const originId = project.find((item) => item.id === id);
   console.log(originId);
@@ -23,7 +22,7 @@ const FirstProject = ({ project, setProject }) => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay: true,
+    // autoplay: true,
   };
 
   return (
@@ -32,22 +31,58 @@ const FirstProject = ({ project, setProject }) => {
       <div className="contentWrap">
         <div className="slideImg">
           <Slider {...settings}>
-            <div>
+            <div className="slideTitleWrap">
+              <div>
+                <span className="slideTitle">
+                  <strong>메인화면</strong>
+                </span>
+              </div>
               <img src={secondMain} alt="second_main" />
-              ㅇ쩍어지ㅏ얼미넝ㄹ먼ㅇ리먼이라ㅓㅁㅇㄹ
+              <ul className="slidelist">
+                <li>상단 슬라이드 구현</li>
+                <li>
+                  매장 검색 input창에서 검색하면 매장 검색 메뉴로 이동하여 결과
+                  출력
+                </li>
+              </ul>
             </div>
-            <div>
-              <img src={secondReview} alt="second_main" />
-              낭러니ㅏ엇ㅁ미ㅏㄷ너시
-            </div>
-            <div>
+            <div className="slideTitleWrap">
+              <div>
+                <span className="slideTitle">
+                  <strong>매장검색</strong>
+                </span>
+              </div>
               <img src={secondSearch} alt="second_main" />
+              <ul className="slidelist">
+                <li>
+                  시/도 검색으로 1차 필터, 매장명 검색으로 2차 필터링 진행
+                </li>
+                <li>매장 클릭시 매장위치 지도로 출력</li>
+                <li>매장위치는 네이버 지도 API 이용하여 위도, 경도 받아옴</li>
+              </ul>
             </div>
-            <div>
+            <div className="slideTitleWrap">
+              <div>
+                <span className="slideTitle">
+                  <strong>상세페이지 내 리뷰</strong>
+                </span>
+              </div>
+              <img src={secondReview} alt="second_main" />
+              <ul className="slidelist">
+                <li>별점 구현으로 점수 및 한줄평 작성</li>
+                <li>본인일 시 리뷰 삭제 가능</li>
+              </ul>
+            </div>
+            <div className="slideTitleWrap">
+              <div>
+                <span className="slideTitle">
+                  <strong>네이버 지도 API 적용</strong>
+                </span>
+              </div>
               <img src={secondMap} alt="second_main" />
-            </div>
-            <div>
-              <img src={secondMain2} alt="second_main" />
+              <ul className="slidelist">
+                <li>네이버 지도 API 이용하여 상세 지도 가져옴</li>
+              </ul>
             </div>
           </Slider>
         </div>
@@ -104,7 +139,7 @@ const FirstProject = ({ project, setProject }) => {
     </StyledProject>
   );
 };
-export default FirstProject;
+export default SecondProject;
 
 const StyledProject = styled.div`
   display: inline-block;
@@ -117,13 +152,42 @@ const StyledProject = styled.div`
     width: 90%;
     margin: 0 auto;
   }
+  .slideTitleWrap {
+    display: flex;
+    text-align: center;
+    padding: 5px;
+  }
+  .slideTitle {
+    font-size: 1.3em;
+  }
+
+  .slideTitle::after {
+    content: "";
+    display: flex;
+    text-align: center;
+    align-items: center;
+    width: 9vw;
+    margin-top: 5px;
+    margin-left: 20vw;
+    border-bottom: 2px solid gray;
+  }
+  .slidelist {
+    width: 35vw;
+    font-size: 1.1em;
+    text-align: left;
+    line-height: 1.5em;
+    list-style: none;
+  }
+
+  .slidelist li::before {
+    content: "👉 ";
+  }
+
   .slideImg {
     display: inline-block;
     width: 55%;
     height: 80vh;
     margin-right: 5%;
-    /* border: 3px solid #38b2ea; */
-    /* background-color: #38b2ea; */
     padding: 40px;
 
     img {
@@ -131,20 +195,18 @@ const StyledProject = styled.div`
       height: 90%;
       object-fit: cover;
       align-items: center;
-      margin: 0 auto;
+      margin: 20px auto;
       border: 1px solid gray;
     }
   }
   .slideContent {
     width: 40%;
-    /* background-color: #f6a7b4; */
-    /* border: 1px solid #f6a7b4; */
   }
   .slideDetail {
-    height: 55vh;
+    height: 60vh;
     margin-top: 20px;
     padding: 30px;
-    box-shadow: 0px 0 30px #38b2ea;
+    box-shadow: 0px 0 30px gray;
     /* box-shadow: 0px 0 30px rgb(5 13 24 / 8%); */
     h2 {
       font-size: 1.6em;
@@ -169,8 +231,6 @@ const StyledProject = styled.div`
     }
   }
   .slick-slider {
-    /* margin: 0px; */
-    /* padding: 30px; */
   }
   .slick-track {
     margin: 0;
