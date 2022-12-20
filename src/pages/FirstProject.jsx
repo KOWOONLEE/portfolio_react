@@ -12,7 +12,7 @@ import secondMain2 from "../assets/images/project/second/second_main_2.png";
 import { AiFillGithub } from "react-icons/ai";
 import { AiOutlineFileText } from "react-icons/ai";
 
-const Project = ({ project, setProject }) => {
+const FirstProject = ({ project, setProject }) => {
   const { id } = useParams();
   const originId = project.find((item) => item.id === id);
   console.log(originId);
@@ -104,7 +104,7 @@ const Project = ({ project, setProject }) => {
     </StyledProject>
   );
 };
-export default Project;
+export default FirstProject;
 
 const StyledProject = styled.div`
   display: inline-block;

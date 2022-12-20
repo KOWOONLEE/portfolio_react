@@ -22,7 +22,7 @@ function Navbar() {
                 <i className="icon">
                   <AiOutlineHome />
                 </i>
-                <span className="menuDetail"> Home</span>
+                <span className="menuDetail"> HOME</span>
               </Link>
             </li>
             <li>
@@ -30,7 +30,7 @@ function Navbar() {
                 <i className="icon">
                   <BsPerson />{" "}
                 </i>
-                <span> About</span>
+                <span> ABOUT</span>
               </Link>
             </li>
             <li>
@@ -38,7 +38,7 @@ function Navbar() {
                 <i className="icon">
                   <FaReact />
                 </i>
-                <span> Skills</span>
+                <span> SKILLS</span>
               </Link>
             </li>
             <li>
@@ -46,7 +46,7 @@ function Navbar() {
                 <i className="icon">
                   <AiOutlineFile />
                 </i>
-                <span> Resume</span>
+                <span> RESUME</span>
               </Link>
             </li>
             <li>
@@ -59,7 +59,7 @@ function Navbar() {
                 <i className="icon">
                   <FiBookOpen />{" "}
                 </i>
-                <span> Portfolio</span>
+                <span> PORTFOLIO</span>
               </Link>
             </li>
             <li>
@@ -67,7 +67,7 @@ function Navbar() {
                 <i className="icon">
                   <BsPhone />
                 </i>
-                <span> Contact</span>
+                <span> CONTACT</span>
               </Link>
             </li>
           </section>

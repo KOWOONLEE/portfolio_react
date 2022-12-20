@@ -1,6 +1,7 @@
 import styled from "styled-components";
+import firstImg from "../assets/images/project/first/first_main.png";
 import secondImg from "../assets/images/second_main.png";
-import forthImg from "../assets/images/project/4th_main.png";
+import fourthImg from "../assets/images/project/4th_main.png";
 import projectData from "../assets/data/project.json";
 import React, { useEffect, useState } from "react";
 import { ConfigProvider, Radio } from "antd";
@@ -152,37 +153,95 @@ const Portfolio = () => {
                     <p>프로젝트 내 역할 : {item.projectRoll}</p>{" "}
                   </div>
                 ))} */}
-              {/* <ul>
-                <li>All</li>
-                <li>Team Project</li>
-                <li>Personal Project</li>
-              </ul> */}
             </div>
-            <div
-              className="portfolioContainer"
-              // className={
-              //   isHovering ? "portfolioWrapLink" : "portfolioContainer"
-              // }
-            >
-              {projectData.map((item, idx) => (
+            <div className="portfolioContainer">
+              <div
+                className="portfolioWrap"
+                onClick={() => {
+                  navigate("/project/first");
+                }}
+              >
+                <img src={secondImg} alt="secondimg" />
+                <h2>{projectData[0].projectName}</h2>
+                <p>{projectData[0].projectTitle}</p>
+                <hr />
+                <p>
+                  <strong>프로젝트 기술 : </strong>
+                  {projectData[0].projectSkill}
+                </p>
+                <p>
+                  <strong>사이트 소개 : </strong>
+                  {projectData[0].projectIntro}
+                </p>
+                <p>
+                  <strong>프로젝트 내 역할 :</strong>
+                  {projectData[0].projectRoll}
+                </p>
+              </div>
+              <div
+                className="portfolioWrap"
+                onClick={() => {
+                  navigate("/project/second");
+                }}
+              >
+                <img className="firstImg" src={firstImg} alt="firstimg" />
+                <h2>{projectData[1].projectName}</h2>
+                <p>{projectData[1].projectTitle}</p>
+                <hr />
+                <p>
+                  <strong>프로젝트 기술 : </strong>
+                  {projectData[1].projectSkill}
+                </p>
+                <p>
+                  <strong>사이트 소개 : </strong>
+                  {projectData[1].projectIntro}
+                </p>
+                <p>
+                  <strong>프로젝트 내 역할 :</strong>
+                  {projectData[1].projectRoll}
+                </p>
+              </div>
+              <div
+                className="portfolioWrap "
+                onClick={() => {
+                  navigate("/project/third");
+                }}
+              >
+                <img src={fourthImg} alt="fourthimg" />
+                <h2>{projectData[2].projectName}</h2>
+                <p>{projectData[2].projectTitle}</p>
+                <hr />
+                <p>
+                  <strong>프로젝트 기술 : </strong>
+                  {projectData[2].projectSkill}
+                </p>
+                <p>
+                  <strong>사이트 소개 : </strong>
+                  {projectData[2].projectIntro}
+                </p>
+                <p>
+                  <strong>프로젝트 내 역할 :</strong>
+                  {projectData[2].projectRoll}
+                </p>
+              </div>
+              {/* {projectData.map((item, idx) => (
                 <div
                   className="portfolioWrap"
-                  value="item"
                   key="item"
                   onClick={() => {
                     navigate(`/project/${item.id}`);
                   }}
-                >
-                  {/* <div className="portfolioWrap" value="item" key="id"> */}
-                  <img src={item.projectImg} alt="project" />
+                > */}
+              {/* <div className="portfolioWrap" value="item" key="id"> */}
+              {/* <img src={item.projectImg} alt="project" />
                   <h2>{item.projectName}</h2>
-                  <p class="projectSub">{item.projectTitle}</p>
+                  <p className="projectSub">{item.projectTitle}</p>
                   <hr />
                   <p>프로젝트 기술 : {item.projectSkill}</p>
                   <p>사이트 소개 : {item.projectIntro}</p>
                   <p>프로젝트 내 역할 : {item.projectRoll}</p>{" "}
                 </div>
-              ))}
+              ))} */}
             </div>
 
             <div className="portfolioContainer"></div>
@@ -257,11 +316,17 @@ const StyledPortfolio = styled.div`
     img {
       width: 100%;
     }
+    p {
+      font-size: 1em;
+      line-height: 1.5em;
+    }
   }
+
   .portfolioWrap:hover {
-    transform: scale(1.2);
-    border: 2px solid #38b2ea;
+    transform: scale(1.1);
+    border: 3px solid #38b2ea;
     z-index: 999;
+    cursor: pointer;
   }
   /* .portfolioWrapLink {
     transform: scale(1.2);

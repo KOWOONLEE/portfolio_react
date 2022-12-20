@@ -2,6 +2,14 @@ import styled from "styled-components";
 import Portfolio from "./Portfolio";
 import BottomToTop from "../components/BottomToTop";
 import Contact from "./Contact";
+import htmlIcon from "../assets/images/icons/html-5.png";
+import cssIcon from "../assets/images/icons/css.png";
+import jsIcon from "../assets/images/icons/js.png";
+import typeIcon from "../assets/images/icons/typescript.png";
+import reactIcon from "../assets/images/icons/react_icon.png";
+import notionIcon from "../assets/images/icons/notion_icon.png";
+import githubIcon from "../assets/images/icons/github_icon.png";
+import slackIcon from "../assets/images/icons/slack_icon.png";
 
 function About() {
   return (
@@ -69,9 +77,22 @@ function About() {
                 <th>Communication</th>
               </tr>
               <tr>
-                <td>HTML, CSS, Javascript, Typescript</td>
-                <td>React</td>
-                <td>Github, Notion, Slack</td>
+                {/* <td>HTML, CSS, Javascript, Typescript</td> */}
+                <td>
+                  <img src={htmlIcon} alt="html" />
+                  <img src={cssIcon} alt="css" />
+                  <img src={jsIcon} alt="js" />
+                  <img src={typeIcon} alt="ts" />
+                </td>
+                <td>
+                  <img className="reactIcon" src={reactIcon} alt="react" />
+                </td>
+                <td>
+                  {" "}
+                  <img src={notionIcon} alt="notion" />
+                  <img src={githubIcon} alt="github" />
+                  <img src={slackIcon} alt="slack" />
+                </td>
               </tr>
               <tr></tr>
             </table>
@@ -245,5 +266,14 @@ const StyledAbout = styled.div`
     width: 30%;
     height: 5vh;
     font-size: 1.3em;
+    img {
+      width: 60px;
+      margin: 20px 6px 10px 6px;
+    }
+  }
+  .reactIcon {
+    width: 60px;
+    height: 65px;
+    border-radius: 10px;
   }
 `;
