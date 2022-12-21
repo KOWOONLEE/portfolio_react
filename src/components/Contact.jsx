@@ -55,18 +55,19 @@ export default Contact;
 
 const StyledContact = styled.div`
   display: inline-block;
-  margin-bottom: 150px;
+  /* margin-bottom: 150px; */
 
   .contactWrap {
-    width: 35vw;
-    height: 45vh;
+    width: 23vw;
+    height: 43vh;
+    background-color: white;
     box-shadow: 0px 0 10px gray;
 
     strong {
-      font-size: 1.6em;
+      font-size: 1.4em;
     }
     p {
-      font-size: 1.3em;
+      font-size: 1.2em;
     }
 
     i {
@@ -75,7 +76,7 @@ const StyledContact = styled.div`
       float: left;
       width: 44px;
       height: 44px;
-      background: #dff3fc;
+      background: white;
       display: flex;
       justify-content: center;
       margin-left: 20px;
@@ -85,10 +86,10 @@ const StyledContact = styled.div`
     }
   }
   .address {
-    margin-top: 20px;
+    margin-top: 15px;
   }
 
   .content {
-    margin-left: 80px;
+    margin-left: 70px;
   }
 `;

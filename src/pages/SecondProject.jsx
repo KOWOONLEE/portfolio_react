@@ -48,7 +48,7 @@ const SecondProject = () => {
                   <strong>매장검색</strong>
                 </span>
               </div>
-              <img src={secondSearch} alt="second_main" />
+              <img src={secondSearch} alt="secondSearch" />
               <ul className="slidelist">
                 <li>
                   시/도 검색으로 1차 필터, 매장명 검색으로 2차 필터링 진행
@@ -63,7 +63,7 @@ const SecondProject = () => {
                   <strong>상세페이지 내 리뷰</strong>
                 </span>
               </div>
-              <img src={secondReview} alt="second_main" />
+              <img src={secondReview} alt="secondReview" />
               <ul className="slidelist">
                 <li>별점 구현으로 점수 및 한줄평 작성</li>
                 <li>본인일 시 리뷰 삭제 가능</li>
@@ -75,7 +75,7 @@ const SecondProject = () => {
                   <strong>네이버 지도 API 적용</strong>
                 </span>
               </div>
-              <img src={secondMap} alt="second_main" />
+              <img src={secondMap} alt="secondMap" />
               <ul className="slidelist">
                 <li>네이버 지도 API 이용하여 상세 지도 가져옴</li>
               </ul>

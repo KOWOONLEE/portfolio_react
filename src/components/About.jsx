@@ -18,43 +18,53 @@ function About() {
         <section id="about">
           <div className="aboutSection">
             <div className="paddingMargin">
-              <h1>About</h1>
-              <h2>Front-end Developer</h2>
-              <div style={{ fontSize: "1.2em", lineHeight: "2vh" }}>
-                <p>
-                  기존의 직무에서 벗어나 개발자라는 새로운 길을 개척하고 있는
-                  이고운입니다.
-                </p>
-                <p>
-                  현실에 안주하지 않고 계속 발전해가는 것이 인생의 목표입니다.
-                </p>
-                <p style={{ marginBottom: "5vh" }}>
-                  이 시대의 편리함을 책임지는 개발자로서 성장하고 싶습니다.
-                </p>
+              <div className="aboutWrap">
+                <div className="aboutLeft">
+                  <h1>About</h1>
+                  <h2>Front-end Developer</h2>
+                  <div style={{ fontSize: "1.2em", lineHeight: "2vh" }}>
+                    <p>
+                      기존의 직무에서 벗어나 개발자라는 새로운 길을 개척하고
+                      있는 이고운입니다.
+                    </p>
+                    <p>
+                      현실에 안주하지 않고 계속 발전해가는 것이 인생의
+                      목표입니다.
+                    </p>
+                    <p style={{ marginBottom: "5vh" }}>
+                      이 시대의 편리함을 책임지는 개발자로서 성장하고 싶습니다.
+                    </p>
+                  </div>
+                  <ul className="aboutList">
+                    <li>
+                      <span>Name: </span> 이 고 운
+                    </li>
+                    <li>
+                      <span>Vlog: </span>
+                      <a href="https://velog.io/@kkk5689">
+                        https://velog.io/@kkk5689
+                      </a>
+                    </li>
+                    <li>
+                      <span>Birthday: </span> 4 April 1992
+                    </li>
+                    <li>
+                      <span>Github: </span>
+                      <a href="https://github.com/KOWOONLEE">
+                        https://github.com/KOWOONLEE
+                      </a>
+                    </li>
+                    <li>
+                      <span>Resume:</span> PDF Resume
+                    </li>
+                  </ul>
+                </div>
+                <div className="aboutRight">
+                  <div className="aboutRightWrap">
+                    <Contact />
+                  </div>
+                </div>
               </div>
-              <ul className="aboutList">
-                <li>
-                  <span>Name: </span> 이 고 운
-                </li>
-                <li>
-                  <span>Vlog: </span>
-                  <a href="https://velog.io/@kkk5689">
-                    https://velog.io/@kkk5689
-                  </a>
-                </li>
-                <li>
-                  <span>Birthday: </span> 4 April 1992
-                </li>
-                <li>
-                  <span>Github: </span>
-                  <a href="https://github.com/KOWOONLEE">
-                    https://github.com/KOWOONLEE
-                  </a>
-                </li>
-                <li>
-                  <span>Resume:</span> PDF Resume
-                </li>
-              </ul>
             </div>
           </div>
         </section>
@@ -134,7 +144,7 @@ function About() {
           </div>
         </section>
         <Portfolio />
-        <Contact />
+        {/* <Contact /> */}
         <BottomToTop />
       </StyledAbout>
     </>
@@ -147,6 +157,29 @@ const StyledAbout = styled.div`
   width: 80%;
   margin-left: 20%;
   padding: 20px;
+
+  .aboutWrap {
+    display: flex;
+  }
+
+  .aboutLeft {
+    width: 57%;
+    /* background-color: gray; */
+  }
+  .aboutRight {
+    display: flex;
+    width: 43%;
+    /* background-color: pink; */
+    align-items: center;
+  }
+  .aboutRightWrap {
+    width: 90%;
+    height: 95%;
+    padding: 6px;
+    background-color: #e4f3fa;
+    border-radius: 30px;
+    margin: 0 auto;
+  }
 
   .paddingMargin {
     padding: 30px;
@@ -170,7 +203,7 @@ const StyledAbout = styled.div`
   .aboutList {
     list-style-type: "▷ ";
     line-height: 2em;
-    font-size: 1.2em;
+    font-size: 1.3em;
 
     span {
       font-size: 1.1em;

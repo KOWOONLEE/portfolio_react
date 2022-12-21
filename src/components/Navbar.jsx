@@ -62,14 +62,14 @@ function Navbar() {
                 <span> PORTFOLIO</span>
               </Link>
             </li>
-            <li>
+            {/* <li>
               <Link to="contact" spy={true} smooth={true} activeClass="active">
                 <i className="icon">
                   <BsPhone />
                 </i>
                 <span> CONTACT</span>
               </Link>
-            </li>
+            </li> */}
           </section>
         </div>
       </StyledNavbar>

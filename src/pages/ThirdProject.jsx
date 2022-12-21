@@ -28,7 +28,7 @@ const ThirdProject = () => {
                   <strong>메인화면 오디오 플레이어</strong>
                 </span>
               </div>
-              <img src={thirdMain} alt="first_login" />
+              <img src={thirdMain} alt="thirdMain" />
               <ul className="slidelist">
                 <li>react-h5-audio-player 이용하여 플레이어 삽입</li>
                 <li>오디오 리스트에서 음악 선택 후 플레이 가능</li>

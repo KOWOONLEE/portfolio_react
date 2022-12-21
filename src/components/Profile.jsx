@@ -1,33 +1,34 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
+import ReactTypingEffect from "react-typing-effect";
 import MainImg from "../assets/images/kowooni_main.jpeg";
 
 function Profile() {
-  const [title, setTitle] = useState("");
-  const [count, setCount] = useState(0);
-  const typingWord = "Web Developer";
+  // const [title, setTitle] = useState("");
+  // const [count, setCount] = useState(0);
+  // const typingWord = "Web Developer";
 
-  useEffect(() => {
-    const typingInterval = setInterval(() => {
-      setTitle((prevTitleValue) => {
-        let result = prevTitleValue
-          ? prevTitleValue + typingWord[count]
-          : typingWord[0];
-        setCount(count + 1);
+  // useEffect(() => {
+  //   const typingInterval = setInterval(() => {
+  //     setTitle((prevTitleValue) => {
+  //       let result = prevTitleValue
+  //         ? prevTitleValue + typingWord[count]
+  //         : typingWord[0];
+  //       setCount(count + 1);
 
-        if (count >= typingWord.length) {
-          setCount(0);
-          setTitle("");
-        }
+  //       if (count >= typingWord.length) {
+  //         setCount(0);
+  //         setTitle("");
+  //       }
 
-        return result;
-      });
-    }, 200);
+  //       return result;
+  //     });
+  //   }, 200);
 
-    return () => {
-      clearInterval(typingInterval);
-    };
-  });
+  //   return () => {
+  //     clearInterval(typingInterval);
+  //   };
+  // });
 
   return (
     <div id="home" className="App">
@@ -36,9 +37,16 @@ function Profile() {
           <img className="mainBackground" alt="background_img" src={MainImg} />
         </div>
         <div className="typingName">
-          <h3>LEE KO WOON</h3>
+          <h2>LEE KO WOON</h2>
           <h3 className="typingword">
-            I'm <span>{title}</span>
+            <span>I'm </span>
+            {/* I'm <span>{title}</span> */}
+            <ReactTypingEffect
+              speed="150"
+              eraseSpeed="100"
+              eraseDelay="2000"
+              text={["Web Developer.", "going to be a person who grows up!"]}
+            />
           </h3>
         </div>
       </StyledProfile>
@@ -100,15 +108,26 @@ const StyledProfile = styled.div`
     height: 100vh;
     overflow-x: hidden;
 
+    h2 {
+      display: fixed;
+      position: relative;
+      color: white;
+      z-index: 99;
+      opacity: 1;
+      font-size: 4.5em;
+      left: 10vw;
+      top: 28vh;
+    }
+
     h3 {
       display: fixed;
       position: relative;
       color: white;
       z-index: 99;
       opacity: 1;
-      font-size: 4em;
+      font-size: 3em;
       left: 10vw;
-      top: 20vh;
+      top: 25vh;
     }
     h3::after {
       content: "";
@@ -128,12 +147,12 @@ const StyledProfile = styled.div`
     right: 0;
     z-index: 1;
   }
-  .typingword::after {
+  /* .typingword::after {
     content: "";
     margin-left: 0.6rem;
     border-right: 3px solid white;
     animation: cusor 0.9s infinite steps(2);
-  }
+  } */
   .typingword span {
     padding-bottom: 4px;
     letter-spacing: 1px;

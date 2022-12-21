@@ -54,29 +54,6 @@ const Portfolio = () => {
               <div
                 className="portfolioWrap"
                 onClick={() => {
-                  navigate("/project/second");
-                }}
-              >
-                <img src={secondImg} alt="secondimg" />
-                <h2>{projectData[0].projectName}</h2>
-                <p>{projectData[0].projectTitle}</p>
-                <hr />
-                <p>
-                  <strong>프로젝트 기술 : </strong>
-                  {projectData[0].projectSkill}
-                </p>
-                <p>
-                  <strong>사이트 소개 : </strong>
-                  {projectData[0].projectIntro}
-                </p>
-                <p>
-                  <strong>프로젝트 내 역할 :</strong>
-                  {projectData[0].projectRoll}
-                </p>
-              </div>
-              <div
-                className="portfolioWrap"
-                onClick={() => {
                   navigate("/project/first");
                 }}
               >
@@ -95,6 +72,29 @@ const Portfolio = () => {
                 <p>
                   <strong>프로젝트 내 역할 :</strong>
                   {projectData[1].projectRoll}
+                </p>
+              </div>
+              <div
+                className="portfolioWrap"
+                onClick={() => {
+                  navigate("/project/second");
+                }}
+              >
+                <img src={secondImg} alt="secondimg" />
+                <h2>{projectData[0].projectName}</h2>
+                <p>{projectData[0].projectTitle}</p>
+                <hr />
+                <p>
+                  <strong>프로젝트 기술 : </strong>
+                  {projectData[0].projectSkill}
+                </p>
+                <p>
+                  <strong>사이트 소개 : </strong>
+                  {projectData[0].projectIntro}
+                </p>
+                <p>
+                  <strong>프로젝트 내 역할 :</strong>
+                  {projectData[0].projectRoll}
                 </p>
               </div>
               <div
