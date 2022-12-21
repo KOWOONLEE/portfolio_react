@@ -87,7 +87,6 @@ function About() {
                 <th>Communication</th>
               </tr>
               <tr>
-                {/* <td>HTML, CSS, Javascript, Typescript</td> */}
                 <td>
                   <img src={htmlIcon} alt="html" />
                   <img src={cssIcon} alt="css" />
@@ -144,7 +143,6 @@ function About() {
           </div>
         </section>
         <Portfolio />
-        {/* <Contact /> */}
         <BottomToTop />
       </StyledAbout>
     </>

@@ -151,7 +151,7 @@ const StyledProject = styled.div`
     margin-top: 20px;
     padding: 30px;
     box-shadow: 0px 0 30px gray;
-    /* box-shadow: 0px 0 30px rgb(5 13 24 / 8%); */
+
     h2 {
       font-size: 1.6em;
       text-align: center;

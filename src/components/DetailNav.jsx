@@ -114,7 +114,6 @@ const StyledNav = styled.div`
     display: flex;
     width: 90%;
     height: 10vh;
-    /* background-color: #f0eeee; */
     background-color: black;
     align-items: center;
     margin: 0 auto;
@@ -123,7 +122,6 @@ const StyledNav = styled.div`
     justify-content: space-between;
 
     h2 {
-      /* font-family: "Kanit", sans-serif; */
       font-size: 1.7em;
       font-weight: 600;
       color: white;
@@ -161,10 +159,9 @@ const StyledNav = styled.div`
 `;
 const Divhover = styled.div`
   height: 20px;
-  /* background-color: blue; */
   color: black;
-  transition: top 1s ease-in; // trasition 으로 top 이동시 자연스럽게 만들어 주자
-  top: 20px; // 호버메시지의 원래 위치
+  transition: top 1s ease-in;
+  top: 20px;
 
   .first {
     display: flex;
@@ -188,7 +185,6 @@ const Divhover = styled.div`
   }
 
   @keyframes fadeout {
-    // fade-out시 opacity를 흐릿하다가 선명하기 만들자
     0% {
       opacity: 0;
     }

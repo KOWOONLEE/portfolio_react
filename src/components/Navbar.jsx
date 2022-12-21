@@ -1,8 +1,9 @@
 import React from "react";
 import styled from "styled-components";
+import ReactTypingEffect from "react-typing-effect";
 import Profile_img from "../assets/images/kowoon_profile.jpeg";
 import { AiOutlineFile, AiOutlineHome } from "react-icons/ai";
-import { BsPerson, BsPhone } from "react-icons/bs";
+import { BsPerson } from "react-icons/bs";
 import { FaReact } from "react-icons/fa";
 import { FiBookOpen } from "react-icons/fi";
 import { Link } from "react-scroll";
@@ -62,6 +63,17 @@ function Navbar() {
                 <span> PORTFOLIO</span>
               </Link>
             </li>
+            <p>
+              <span>Made </span>
+              <ReactTypingEffect
+                className="typingEffect"
+                speed="100"
+                eraseSpeed="100"
+                eraseDelay="1500"
+                text={["with React", "by kowoon"]}
+              />
+            </p>
+
             {/* <li>
               <Link to="contact" spy={true} smooth={true} activeClass="active">
                 <i className="icon">
@@ -146,5 +158,8 @@ const StyledNavbar = styled.div`
         color: #149ddd;
       }
     }
+  }
+  .typingEffect {
+    color: #149ddd;
   }
 `;

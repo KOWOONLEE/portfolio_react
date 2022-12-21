@@ -42,6 +42,7 @@ const StyledBottomToTop = styled.div`
     border-radius: 50px;
     border: none;
     transition: all 0.4s;
+    cursor: pointer;
 
     i {
       position: absolute;
