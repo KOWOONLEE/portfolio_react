@@ -19,6 +19,15 @@
   },
   {
     "id": "3",
+    "projectFilter": "Team Project",
+    "projectName": "Mini 프로젝트_기업협업 pre-onboarding",
+    "projectTitle": "오디오 플레이어",
+    "projectSkill": " React.js",
+    "projectIntro": "오디오 플레이어 및 녹음 기능",
+    "projectRoll": "오디오 플레이어, 플레이 리스트"
+  },
+  {
+    "id": "4",
     "projectFilter": "Personal Project",
     "projectName": "Mini 프로젝트_기업협업 pre-onboarding",
     "projectTitle": "병원예약 홈페이지",

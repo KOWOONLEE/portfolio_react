@@ -12,7 +12,12 @@ const DetailNav = () => {
   return (
     <StyledNav>
       <div className="projectNav">
-        <div>
+        <div
+          className="projectDetailword"
+          onClick={() => {
+            navigate("/");
+          }}
+        >
           <h2> PROJECT DETAILS</h2>
         </div>
         <div className="middleMenu">
@@ -102,6 +107,9 @@ const DetailNav = () => {
 export default DetailNav;
 
 const StyledNav = styled.div`
+  .projectDetailword {
+    cursor: pointer;
+  }
   .projectNav {
     display: flex;
     width: 90%;

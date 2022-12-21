@@ -3,6 +3,7 @@ import Slider from "react-slick";
 import styled from "styled-components";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import ReactPlayer from "react-player";
 import secondReview from "../assets/images/project/second/second_review.png";
 import secondSearch from "../assets/images/project/second/second_search.png";
 import secondMap from "../assets/images/project/second/second_map.png";
@@ -127,6 +128,21 @@ const SecondProject = () => {
                   </a>
                 </strong>
               </li>
+              <li>
+                <strong>
+                  프로젝트 발표 동영상
+                  <br />
+                  <ReactPlayer
+                    className="player"
+                    url={"https://youtu.be/IpHrikE4MsI"}
+                    playing={false}
+                    width="100%"
+                    height="250px"
+                    muted={true}
+                    controls={true}
+                  />
+                </strong>
+              </li>
             </ul>
           </div>
         </div>
@@ -198,7 +214,7 @@ const StyledProject = styled.div`
     width: 40%;
   }
   .slideDetail {
-    height: 60vh;
+    height: 90vh;
     margin-top: 20px;
     padding: 30px;
     box-shadow: 0px 0 30px gray;

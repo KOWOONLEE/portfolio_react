@@ -30,6 +30,7 @@ const ThirdProject = () => {
               </div>
               <img src={thirdMain} alt="first_login" />
               <ul className="slidelist">
+                <li>react-h5-audio-player 이용하여 플레이어 삽입</li>
                 <li>오디오 리스트에서 음악 선택 후 플레이 가능</li>
                 <li>재생 플레이어 다음 곡 넘김, 이전 곡 넘김 기능</li>
               </ul>
@@ -40,7 +41,7 @@ const ThirdProject = () => {
           <div className="slideDetail">
             <h2>Project Information</h2>
             <h4>Mini Project - 오디오 플레이어 제작 </h4>
-            <h4>기업협업 pre-onboarding </h4>
+            <h4>기업협업 과제 pre-onboarding </h4>
             <hr />
             <ul>
               <li>
@@ -111,14 +112,14 @@ const StyledProject = styled.div`
     align-items: center;
     width: 9vw;
     margin-top: 5px;
-    margin-left: 20vw;
+    margin-left: 18vw;
     border-bottom: 2px solid gray;
   }
   .slidelist {
     width: 35vw;
     font-size: 1.1em;
     text-align: left;
-    line-height: 1.4em;
+    line-height: 2em;
     list-style: none;
   }
 
@@ -138,7 +139,7 @@ const StyledProject = styled.div`
       height: 90%;
       object-fit: cover;
       align-items: center;
-      margin: 20px auto;
+      margin: 30px auto;
       border: 1px solid gray;
     }
   }
