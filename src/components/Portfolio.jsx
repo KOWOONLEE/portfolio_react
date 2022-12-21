@@ -158,7 +158,7 @@ const Portfolio = () => {
               <div
                 className="portfolioWrap"
                 onClick={() => {
-                  navigate("/project/first");
+                  navigate("/project/second");
                 }}
               >
                 <img src={secondImg} alt="secondimg" />
@@ -181,7 +181,7 @@ const Portfolio = () => {
               <div
                 className="portfolioWrap"
                 onClick={() => {
-                  navigate("/project/second");
+                  navigate("/project/first");
                 }}
               >
                 <img className="firstImg" src={firstImg} alt="firstimg" />

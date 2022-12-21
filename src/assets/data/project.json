@@ -2,7 +2,6 @@
   {
     "id": "1",
     "projectFilter": "Team Project",
-    "projectImg": "./assets/images/second_main.png",
     "projectName": "일차 一茶",
     "projectTitle": "카페 음료 주문 모바일웹 사이트",
     "projectSkill": " React.js, Typescript",
@@ -12,9 +11,8 @@
   {
     "id": "2",
     "projectFilter": "Team Project",
-    "projectImg": "./assets/images/second_main.png",
-    "projectName": "HALO",
-    "projectTitle": "커뮤니티 사이트",
+    "projectName": "HALLO",
+    "projectTitle": "팀원 모집 커뮤니티 사이트",
     "projectSkill": " React.js",
     "projectIntro": "스터디,프로젝트 팀원 모집",
     "projectRoll": "로그인, 회원가입, 이용약관"
@@ -22,7 +20,6 @@
   {
     "id": "3",
     "projectFilter": "Personal Project",
-    "projectImg": "../images/second_main.png",
     "projectName": "Mini 프로젝트_기업협업 pre-onboarding",
     "projectTitle": "병원예약 홈페이지",
     "projectSkill": " React.js",
