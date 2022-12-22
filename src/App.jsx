@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { Routes, Route } from "react-router-dom";
-import { BrowserRouter as Router } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Main from "./pages/Main";
 import FirstProject from "./pages/FirstProject";
 import SecondProject from "./pages/SecondProject";
@@ -12,8 +11,8 @@ const App = () => {
   const [project, setProject] = useState(ProjectData);
 
   return (
-    <Router>
-      <Routes basename={process.env.PUBLIC_URL}>
+    <BrowserRouter>
+      <Routes basename="portfolio_react">
         <Route path="/" element={<Main />} />
         <Route
           path="/project/first"
@@ -32,7 +31,7 @@ const App = () => {
           element={<FourthProject project={project} setProject={setProject} />}
         />
       </Routes>
-    </Router>
+    </BrowserRouter>
   );
 };
 
