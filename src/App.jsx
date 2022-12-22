@@ -11,8 +11,8 @@ const App = () => {
   const [project, setProject] = useState(ProjectData);
 
   return (
-    <BrowserRouter>
-      <Routes basename="portfolio_react">
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
+      <Routes>
         <Route path="/" element={<Main />} />
         <Route
           path="/project/first"
