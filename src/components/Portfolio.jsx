@@ -223,4 +223,16 @@ const StyledPortfolio = styled.div`
     z-index: 999;
     cursor: pointer;
   }
+
+  @media screen and (max-width: 768px) {
+    #portfolio {
+      /* width: 100%; */
+    }
+    .portfolioContainer {
+      display: block;
+    }
+    .portfolioWrap {
+      width: 90%;
+    }
+  }
 `;

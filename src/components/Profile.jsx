@@ -158,4 +158,22 @@ const StyledProfile = styled.div`
     letter-spacing: 1px;
     border-bottom: 4px solid #149ddd;
   }
+
+  @media screen and (max-width: 1200px) {
+    #home {
+      background-attachment: fixed;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .typingName {
+      font-size: 10px;
+      line-height: 30px;
+    }
+    .typingword {
+      font-size: 7px;
+      line-height: 30px;
+      margin-bottom: 30px;
+    }
+  }
 `;

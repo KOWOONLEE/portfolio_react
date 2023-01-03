@@ -55,11 +55,15 @@ export default Contact;
 
 const StyledContact = styled.div`
   display: inline-block;
+  align-items: center;
+  justify-content: center;
   /* margin-bottom: 150px; */
 
   .contactWrap {
+    display: inline-block;
     width: 23vw;
     height: 43vh;
+    margin: 0 auto;
     background-color: white;
     box-shadow: 0px 0 10px gray;
 
@@ -91,5 +95,11 @@ const StyledContact = styled.div`
 
   .content {
     margin-left: 70px;
+  }
+
+  @media screen and (max-width: 768px) {
+    .contactWrap {
+      width: 50vw;
+    }
   }
 `;

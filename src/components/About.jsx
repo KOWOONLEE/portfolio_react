@@ -168,15 +168,19 @@ const StyledAbout = styled.div`
     display: flex;
     width: 43%;
     /* background-color: pink; */
-    align-items: center;
+
+    margin: 0 auto;
   }
   .aboutRightWrap {
+    display: flex;
     width: 90%;
     height: 95%;
     padding: 6px;
     background-color: #e4f3fa;
     border-radius: 30px;
     margin: 0 auto;
+    align-items: center;
+    justify-content: center;
   }
 
   .paddingMargin {
@@ -306,5 +310,37 @@ const StyledAbout = styled.div`
     width: 60px;
     height: 65px;
     border-radius: 10px;
+  }
+
+  @media screen and (max-width: 768px) {
+    .aboutWrap {
+      display: block;
+    }
+
+    .aboutLeft {
+      width: 100%;
+
+      p {
+        line-height: 1em;
+      }
+    }
+
+    .aboutRight {
+      width: 100%;
+    }
+    table {
+      /* display: inline-block; */
+    }
+    th td {
+      /* width: 100%; */
+    }
+
+    .resumetitle {
+      display: block;
+    }
+    .resumediv {
+      width: 100%;
+      font-size: 13px;
+    }
   }
 `;
