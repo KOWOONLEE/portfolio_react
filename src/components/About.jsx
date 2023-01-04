@@ -152,7 +152,7 @@ export default About;
 const StyledAbout = styled.div`
   display: inline-block;
   /* position: fixed; */
-  width: 80%;
+  width: cal(80%-20px);
   margin-left: 20%;
   padding: 20px;
 
@@ -313,6 +313,10 @@ const StyledAbout = styled.div`
   }
 
   @media screen and (max-width: 768px) {
+    width: 80%;
+    margin-left: 0;
+    padding-left: 0;
+
     .aboutWrap {
       display: block;
     }

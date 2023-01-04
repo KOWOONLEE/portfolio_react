@@ -6,11 +6,31 @@ import { AiOutlineFile, AiOutlineHome } from "react-icons/ai";
 import { BsPerson } from "react-icons/bs";
 import { FaReact } from "react-icons/fa";
 import { FiBookOpen } from "react-icons/fi";
+import { BsList } from "react-icons/bs";
 import { Link } from "react-scroll";
+import { useState, useEffect } from "react";
 
 function Navbar() {
+  const [click, setClick] = useState(false);
+  const [navIcon, setNavIcon] = useState(true);
+
+  const iconClick = () => {
+    setClick(!click);
+  };
+
+  const showNavIcon = () => {
+    if (window.innerWidth <= 768) {
+      setNavIcon(false);
+    } else {
+      setNavIcon(true);
+    }
+  };
+
+  useEffect(() => {
+    showNavIcon();
+  }, []);
   return (
-    <div className="App">
+    <div className="navbarMain">
       <StyledNavbar>
         <div className="navWrap">
           <div>
@@ -75,16 +95,22 @@ function Navbar() {
             </p>
 
             {/* <li>
-              <Link to="contact" spy={true} smooth={true} activeClass="active">
-                <i className="icon">
-                  <BsPhone />
-                </i>
-                <span> CONTACT</span>
-              </Link>
-            </li> */}
+            <Link to="contact" spy={true} smooth={true} activeClass="active">
+              <i className="icon">
+                <BsPhone />
+              </i>
+              <span> CONTACT</span>
+            </Link>
+          </li> */}
           </section>
         </div>
       </StyledNavbar>
+
+      {/* <StyledNavbarMobile>
+        <i className="icon">
+          <BsList />
+        </i>
+      </StyledNavbarMobile> */}
     </div>
   );
 }
@@ -161,5 +187,34 @@ const StyledNavbar = styled.div`
   }
   .typingEffect {
     color: #149ddd;
+  }
+`;
+
+const StyledNavbarMobile = styled.div`
+  @media screen and (max-width: 768px) {
+    display: flex;
+    position: fixed;
+    right: 15px;
+    bottom: 15px;
+    z-index: 999;
+    align-items: center;
+    text-align: center;
+    background: #149ddd;
+    color: black;
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    border: none;
+    transition: all 0.4s;
+    cursor: pointer;
+
+    .icon {
+      position: absolute;
+      left: 15%;
+      top: 15%;
+      font-size: 28px;
+      color: #fff;
+      line-height: 0;
+    }
   }
 `;

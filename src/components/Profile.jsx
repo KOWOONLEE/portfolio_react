@@ -31,7 +31,7 @@ function Profile() {
   // });
 
   return (
-    <div id="home" className="App">
+    <div id="home" className="App" style={{ width: "99vw" }}>
       <StyledProfile>
         <div className="profileBackground">
           <img className="mainBackground" alt="background_img" src={MainImg} />
@@ -78,6 +78,7 @@ const StyledProfile = styled.div`
   .profileBackground {
     /* display: inline-block; */
     position: relative;
+    width: 80vw;
   }
 
   .mainBackground {
@@ -103,7 +104,7 @@ const StyledProfile = styled.div`
   .typingName {
     position: absolute;
     z-index: 2;
-    min-width: 300px;
+    /* min-width: 300px; */
     width: 80vw;
     height: 100vh;
     overflow-x: hidden;
@@ -166,7 +167,20 @@ const StyledProfile = styled.div`
   }
 
   @media screen and (max-width: 768px) {
+    display: flex;
+
+    .mainBackground {
+      background-size: cover;
+      background-position: left;
+    }
+
+    .profileBackground {
+      width: 100%;
+      background-size: cover;
+      background-position: left;
+    }
     .typingName {
+      display: inline-block;
       font-size: 10px;
       line-height: 30px;
     }

@@ -7,8 +7,10 @@ import About from "../components/About";
 function Main() {
   return (
     <StyledMain>
-      <Navbar />
-      <div>
+      <div className="navbar">
+        <Navbar />
+      </div>
+      <div className="mainWrap">
         <Profile />
         <div className="mainPage">
           <About />
@@ -29,6 +31,16 @@ const StyledMain = styled.div`
   /* flex-direction: row; */
   /* justify-content: space-between; */
   .mainPage {
-    margin: 0 30px 0 30px;
+    margin: 0 20px 0 20px;
+  }
+  @media screen and (max-width: 768px) {
+    .navbar {
+      display: none;
+    }
+    .mainWrap {
+      display: block;
+      width: 80%;
+      /* margin-left: 20%; */
+    }
   }
 `;
