@@ -6,29 +6,10 @@ import { AiOutlineFile, AiOutlineHome } from "react-icons/ai";
 import { BsPerson } from "react-icons/bs";
 import { FaReact } from "react-icons/fa";
 import { FiBookOpen } from "react-icons/fi";
-import { BsList } from "react-icons/bs";
 import { Link } from "react-scroll";
-import { useState, useEffect } from "react";
+import { BsList } from "react-icons/bs";
 
 function Navbar() {
-  const [click, setClick] = useState(false);
-  const [navIcon, setNavIcon] = useState(true);
-
-  const iconClick = () => {
-    setClick(!click);
-  };
-
-  const showNavIcon = () => {
-    if (window.innerWidth <= 768) {
-      setNavIcon(false);
-    } else {
-      setNavIcon(true);
-    }
-  };
-
-  useEffect(() => {
-    showNavIcon();
-  }, []);
   return (
     <div className="navbarMain">
       <StyledNavbar>
@@ -105,12 +86,13 @@ function Navbar() {
           </section>
         </div>
       </StyledNavbar>
-
-      {/* <StyledNavbarMobile>
-        <i className="icon">
-          <BsList />
-        </i>
-      </StyledNavbarMobile> */}
+      <StyledNavbarMobile>
+        <div className="navButton">
+          <i className="icon">
+            <BsList />
+          </i>
+        </div>
+      </StyledNavbarMobile>
     </div>
   );
 }
@@ -188,30 +170,39 @@ const StyledNavbar = styled.div`
   .typingEffect {
     color: #149ddd;
   }
+
+  @media screen and (max-width: 768px) {
+    display: none;
+    .navWrap {
+      display: none;
+    }
+  }
 `;
 
 const StyledNavbarMobile = styled.div`
+  display: none;
+
   @media screen and (max-width: 768px) {
     display: flex;
     position: fixed;
-    right: 15px;
-    bottom: 15px;
+    width: 100%;
     z-index: 999;
-    align-items: center;
-    text-align: center;
-    background: #149ddd;
-    color: black;
-    width: 40px;
-    height: 40px;
-    border-radius: 50px;
-    border: none;
-    transition: all 0.4s;
-    cursor: pointer;
 
+    .navButton {
+      display: flex;
+      right: 15px;
+      bottom: 15px;
+      z-index: 999;
+      align-items: center;
+      justify-content: center;
+      background: black;
+      width: 40px;
+      height: 40px;
+      border: none;
+      cursor: pointer;
+    }
     .icon {
-      position: absolute;
-      left: 15%;
-      top: 15%;
+      display: flex;
       font-size: 28px;
       color: #fff;
       line-height: 0;

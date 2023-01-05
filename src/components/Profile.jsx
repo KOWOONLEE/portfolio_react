@@ -168,6 +168,7 @@ const StyledProfile = styled.div`
 
   @media screen and (max-width: 768px) {
     display: flex;
+    margin-left: 10%;
 
     .mainBackground {
       background-size: cover;
@@ -185,6 +186,7 @@ const StyledProfile = styled.div`
       line-height: 30px;
     }
     .typingword {
+      width: 80%;
       font-size: 7px;
       line-height: 30px;
       margin-bottom: 30px;

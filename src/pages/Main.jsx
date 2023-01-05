@@ -3,12 +3,14 @@ import Navbar from "../components/Navbar";
 import Profile from "../components/Profile";
 import styled from "styled-components";
 import About from "../components/About";
+import MobileNav from "../components/MobileNav";
 
 function Main() {
   return (
     <StyledMain>
       <div className="navbar">
         <Navbar />
+        {/* <MobileNav /> */}
       </div>
       <div className="mainWrap">
         <Profile />
@@ -34,12 +36,9 @@ const StyledMain = styled.div`
     margin: 0 20px 0 20px;
   }
   @media screen and (max-width: 768px) {
-    .navbar {
-      display: none;
-    }
     .mainWrap {
       display: block;
-      width: 80%;
+      width: 100%;
       /* margin-left: 20%; */
     }
   }

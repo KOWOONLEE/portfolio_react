@@ -161,12 +161,12 @@ const StyledAbout = styled.div`
   }
 
   .aboutLeft {
-    width: 57%;
+    width: 58%;
     /* background-color: gray; */
   }
   .aboutRight {
     display: flex;
-    width: 43%;
+    width: 42%;
     /* background-color: pink; */
 
     margin: 0 auto;
@@ -313,7 +313,7 @@ const StyledAbout = styled.div`
   }
 
   @media screen and (max-width: 768px) {
-    width: 80%;
+    width: 100%;
     margin-left: 0;
     padding-left: 0;
 
