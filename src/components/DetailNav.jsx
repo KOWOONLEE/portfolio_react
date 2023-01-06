@@ -1,8 +1,16 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { BsList } from "react-icons/bs";
+import { AiOutlineClose } from "react-icons/ai";
+
 import styled from "styled-components";
 
 const DetailNav = () => {
+  const [mobileNav, setMobileNav] = useState(false);
+
+  const handleNav = () => {
+    setMobileNav(!mobileNav);
+  };
   const navigate = useNavigate();
   const [firstHover, setFirstHover] = useState("");
   const [secondHover, setSecondHover] = useState("");
@@ -12,6 +20,17 @@ const DetailNav = () => {
   return (
     <StyledNav>
       <div className="projectNav">
+        <div onClick={handleNav} className="mobileToggle">
+          {!mobileNav ? (
+            <i className="icon">
+              <BsList />
+            </i>
+          ) : (
+            <i className="icon">
+              <AiOutlineClose />
+            </i>
+          )}
+        </div>
         <div
           className="projectDetailword"
           onClick={() => {
@@ -71,10 +90,30 @@ const DetailNav = () => {
           <a href="/">Main Page로 이동</a> <span>/ Portfolio Details </span>
         </div>
       </div>
+      {mobileNav ? (
+        <div className="mobileNavMid">
+          <div className="mobileNavWrap">
+            <ul className="mobileNavList">
+              <li onClick={() => navigate("/project/first")}>
+                first project - Hallo 팀원 모집 사이트
+              </li>
+              <li onClick={() => navigate("/project/second")}>
+                second project - 일차 카페 모바일 웹 사이트
+              </li>
+              <li onClick={() => navigate("/project/third")}>
+                third project - 오디오 플레이어
+              </li>
+              <li onClick={() => navigate("/project/fourth")}>
+                fourth project - 병원 예약 페이지
+              </li>
+            </ul>
+          </div>
+        </div>
+      ) : null}
       <Divhover>
         {firstHover ? (
           <div className="first">
-            <span> Hola - 스터디모집 커뮤니케이션 사이트 제작</span>
+            <span> Hallo - 스터디모집 커뮤니케이션 사이트 제작</span>
           </div>
         ) : (
           ""
@@ -109,6 +148,9 @@ export default DetailNav;
 const StyledNav = styled.div`
   .projectDetailword {
     cursor: pointer;
+  }
+  .mobileToggle {
+    display: none;
   }
   .projectNav {
     display: flex;
@@ -154,6 +196,77 @@ const StyledNav = styled.div`
     }
     span {
       color: #d9d2d2;
+    }
+  }
+  .mobileNavMid {
+    display: none;
+  }
+
+  @media screen and (max-width: 768px) {
+    .mobileToggle {
+      display: flex;
+      right: 15px;
+      bottom: 15px;
+      z-index: 999;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .icon {
+      font-size: 45px;
+      color: #fff;
+      line-height: 0;
+    }
+    .mobileNavList {
+      list-style-type: none;
+      line-height: 2.6em;
+      color: white;
+      font-size: 1.5em;
+
+      li {
+        width: 70vw;
+        border-bottom: 1px solid gray;
+      }
+      li:hover {
+        color: pink;
+
+        cursor: pointer;
+      }
+    }
+
+    .projectDetailword {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .middleMenu {
+      display: none;
+    }
+    .sideMenu {
+      display: none;
+    }
+    .mobileNavMid {
+      display: fixed;
+      position: relative;
+      top: 20vh;
+      align-items: center;
+      justify-content: center;
+    }
+    .mobileNavWrap {
+      display: flex;
+      position: fixed;
+      width: 90vw;
+      height: 40vh;
+      align-items: center;
+      vertical-align: center;
+      justify-content: center;
+      margin: 0 auto;
+      z-index: 9999;
+      background-color: #444343;
     }
   }
 `;
