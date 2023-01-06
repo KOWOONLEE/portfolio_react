@@ -185,4 +185,39 @@ const StyledProject = styled.div`
     font-size: 25px;
     color: #38b2ea;
   }
+  @media screen and (max-width: 768px) {
+    .contentWrap {
+      display: block;
+      align-items: center;
+    }
+    .slideImg {
+      display: block;
+      width: 90%;
+      height: 50vh;
+      align-items: center;
+    }
+    .slideContent {
+      display: block;
+      width: 90%;
+      margin: 0 auto;
+    }
+    .slideDetail {
+      height: 50vh;
+    }
+    .slidelist {
+      li {
+        width: 62vw;
+      }
+    }
+    .slideTitle::after {
+      content: "";
+      display: flex;
+      text-align: center;
+      align-items: center;
+      width: 9vw;
+      margin-top: 5px;
+      margin-left: 34vw;
+      border-bottom: 2px solid gray;
+    }
+  }
 `;
