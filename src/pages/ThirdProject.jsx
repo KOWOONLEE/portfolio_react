@@ -201,8 +201,10 @@ const StyledProject = styled.div`
       width: 90%;
       margin: 0 auto;
     }
+
     .slideDetail {
       height: 50vh;
+      margin-bottom: 50px;
     }
     .slidelist {
       li {

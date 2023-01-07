@@ -1,16 +1,13 @@
-import React, { useEffect, useRef, useState } from "react";
 import Navbar from "../components/Navbar";
 import Profile from "../components/Profile";
 import styled from "styled-components";
 import About from "../components/About";
-import MobileNav from "../components/MobileNav";
 
 function Main() {
   return (
     <StyledMain>
       <div className="navbar">
         <Navbar />
-        {/* <MobileNav /> */}
       </div>
       <div className="mainWrap">
         <Profile />

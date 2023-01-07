@@ -81,29 +81,31 @@ function About() {
               현재까지 배우고 사용했던 기술입니다.
             </p>
             <table>
-              <tr>
-                <th>Language</th>
-                <th>Framework</th>
-                <th>Communication</th>
-              </tr>
-              <tr>
-                <td>
-                  <img src={htmlIcon} alt="html" />
-                  <img src={cssIcon} alt="css" />
-                  <img src={jsIcon} alt="js" />
-                  <img src={typeIcon} alt="ts" />
-                </td>
-                <td>
-                  <img className="reactIcon" src={reactIcon} alt="react" />
-                </td>
-                <td>
-                  {" "}
-                  <img src={notionIcon} alt="notion" />
-                  <img src={githubIcon} alt="github" />
-                  <img src={slackIcon} alt="slack" />
-                </td>
-              </tr>
-              <tr></tr>
+              <thead>
+                <tr>
+                  <th>Language</th>
+                  <th>Framework</th>
+                  <th>Communication</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <img src={htmlIcon} alt="html" />
+                    <img src={cssIcon} alt="css" />
+                    <img src={jsIcon} alt="js" />
+                    <img src={typeIcon} alt="ts" />
+                  </td>
+                  <td>
+                    <img className="reactIcon" src={reactIcon} alt="react" />
+                  </td>
+                  <td>
+                    <img src={notionIcon} alt="notion" />
+                    <img src={githubIcon} alt="github" />
+                    <img src={slackIcon} alt="slack" />
+                  </td>
+                </tr>
+              </tbody>
             </table>
           </div>
         </section>
@@ -333,10 +335,12 @@ const StyledAbout = styled.div`
       width: 100%;
     }
     table {
-      /* display: inline-block; */
+    }
+    th {
+      font-size: 1.2em;
     }
     th td {
-      /* width: 100%; */
+      width: 80%;
     }
 
     .resumetitle {

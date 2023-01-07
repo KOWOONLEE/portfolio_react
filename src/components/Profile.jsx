@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import ReactTypingEffect from "react-typing-effect";
 import MainImg from "../assets/images/kowooni_main.jpeg";

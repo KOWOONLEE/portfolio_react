@@ -257,6 +257,8 @@ const StyledProject = styled.div`
     }
     .slideDetail {
       height: 50vh;
+      margin-top: 50px;
+      margin-bottom: 50px;
     }
     .slidelist {
       li {
@@ -272,6 +274,11 @@ const StyledProject = styled.div`
       margin-top: 5px;
       margin-left: 34vw;
       border-bottom: 2px solid gray;
+    }
+
+    .slick-slider {
+      height: 75vh;
+      margin-bottom: 30px;
     }
   }
 `;

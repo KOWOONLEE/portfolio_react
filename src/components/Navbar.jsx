@@ -71,7 +71,7 @@ function Navbar() {
                 <span> PORTFOLIO</span>
               </Link>
             </li>
-            <p>
+            <div>
               <span>Made </span>
               <ReactTypingEffect
                 className="typingEffect"
@@ -80,7 +80,7 @@ function Navbar() {
                 eraseDelay="1500"
                 text={["with React", "by kowoon"]}
               />
-            </p>
+            </div>
 
             {/* <li>
             <Link to="contact" spy={true} smooth={true} activeClass="active">
@@ -178,7 +178,7 @@ function Navbar() {
                     <span> PORTFOLIO</span>
                   </Link>
                 </li>
-                <p>
+                <div>
                   <span>Made </span>
                   <ReactTypingEffect
                     className="typingEffect"
@@ -187,7 +187,7 @@ function Navbar() {
                     eraseDelay="1500"
                     text={["with React", "by kowoon"]}
                   />
-                </p>
+                </div>
               </section>
             </div>
           </div>

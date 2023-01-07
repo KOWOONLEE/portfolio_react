@@ -265,7 +265,8 @@ const StyledProject = styled.div`
       margin: 0 auto;
     }
     .slideDetail {
-      height: 80vh;
+      height: 90vh;
+      margin-bottom: 50px;
     }
     .slidelist {
       li {

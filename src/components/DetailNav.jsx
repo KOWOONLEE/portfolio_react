@@ -222,10 +222,11 @@ const StyledNav = styled.div`
       line-height: 0;
     }
     .mobileNavList {
-      list-style-type: none;
+      list-style: none;
       line-height: 2.6em;
       color: white;
-      font-size: 1.5em;
+      font-size: 1.1em;
+      overflow: hidden;
 
       li {
         width: 70vw;
@@ -233,9 +234,11 @@ const StyledNav = styled.div`
       }
       li:hover {
         color: pink;
-
         cursor: pointer;
       }
+    }
+    .mobileNavList li::before {
+      content: "💾 ";
     }
 
     .projectDetailword {

@@ -100,6 +100,10 @@ const StyledContact = styled.div`
   @media screen and (max-width: 768px) {
     .contactWrap {
       width: 50vw;
+
+      p {
+        font-size: 1em;
+      }
     }
   }
 `;
