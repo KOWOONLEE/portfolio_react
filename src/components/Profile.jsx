@@ -56,6 +56,7 @@ function Profile() {
 export default Profile;
 
 const StyledProfile = styled.div`
+  font-family: "Ubuntu", sans-serif;
   @keyframes fadeInLeft {
     0% {
       opacity: 0;
@@ -78,6 +79,7 @@ const StyledProfile = styled.div`
     /* display: inline-block; */
     position: relative;
     width: 80vw;
+    /* z-index: -1; */
   }
 
   .mainBackground {

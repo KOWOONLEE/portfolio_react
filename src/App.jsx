@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Main from "./pages/Main";
 import FirstProject from "./pages/FirstProject";
 import SecondProject from "./pages/SecondProject";
@@ -9,6 +9,7 @@ import FourthProject from "./pages/FourthProject";
 
 const App = () => {
   const [project, setProject] = useState(ProjectData);
+  const [path, setPath] = useState("");
 
   return (
     <BrowserRouter basename={process.env.PUBLIC_URL}>

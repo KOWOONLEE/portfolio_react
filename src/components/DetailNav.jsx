@@ -2,6 +2,8 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { BsList } from "react-icons/bs";
 import { AiOutlineClose } from "react-icons/ai";
+import { FaArrowRight } from "react-icons/fa";
+import Profile_img from "../assets/images/kowoon_profile.jpeg";
 
 import styled from "styled-components";
 
@@ -31,14 +33,23 @@ const DetailNav = () => {
             </i>
           )}
         </div>
-        <div
-          className="projectDetailword"
-          onClick={() => {
-            navigate("/");
-          }}
-        >
-          <h2> PROJECT DETAILS</h2>
+        <div className="frontMenu">
+          <div className="detailsProfile">
+            <img className="profileImg" alt="profile_img" src={Profile_img} />
+          </div>
+          <div className="projectDetailwordWrap">
+            <div
+              className="projectDetailword"
+              onClick={() => {
+                navigate("/");
+              }}
+            >
+              <h2> PROJECT DETAILS</h2>
+              <h3>Project &gt; now project </h3>
+            </div>
+          </div>
         </div>
+
         <div className="middleMenu">
           <span
             onMouseEnter={() => {
@@ -87,7 +98,17 @@ const DetailNav = () => {
           </span>
         </div>
         <div className="sideMenu">
-          <a href="/">Main Page로 이동</a> <span>/ Portfolio Details </span>
+          <div
+            className="exitBtn"
+            onClick={() => {
+              navigate("/");
+            }}
+          >
+            Main Page
+            <div className="exitIcon">
+              <FaArrowRight />
+            </div>
+          </div>
         </div>
       </div>
       {mobileNav ? (
@@ -146,9 +167,48 @@ const DetailNav = () => {
 export default DetailNav;
 
 const StyledNav = styled.div`
-  .projectDetailword {
-    cursor: pointer;
+  font-family: "Ubuntu", sans-serif;
+
+  .frontMenu {
+    display: flex;
+    width: 20vw;
+    justify-content: space-between;
   }
+  .detailsProfile {
+    width: 4vw;
+    height: 4vw;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      border-radius: 50%;
+    }
+  }
+  .projectDetailwordWrap {
+    display: flex;
+  }
+  .projectDetailword {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+
+    h2 {
+      font-size: 1.6em;
+      font-weight: 400;
+      color: white;
+      margin: 0;
+    }
+    h3 {
+      color: white;
+      font-size: 1em;
+      font-weight: 400;
+      margin: 5px 0;
+    }
+  }
+
   .mobileToggle {
     display: none;
   }
@@ -156,26 +216,20 @@ const StyledNav = styled.div`
     display: flex;
     width: 90%;
     height: 10vh;
-    background-color: black;
+    background-color: #27314a;
+    border-radius: 20px;
     align-items: center;
     margin: 0 auto;
     padding: 0 20px 0 20px;
     box-shadow: 0 5px 5px -4px gray;
     justify-content: space-between;
-
-    h2 {
-      font-size: 1.7em;
-      font-weight: 600;
-      color: white;
-      text-shadow: 1px 1px 1px #205878;
-    }
   }
   .middleMenu {
     color: white;
 
     span {
       font-size: 1.2em;
-      font-weight: bold;
+      /* font-weight: bold; */
       margin-right: 40px;
     }
     span:hover {
@@ -185,17 +239,34 @@ const StyledNav = styled.div`
   }
   .sideMenu {
     font-size: 1.2em;
-
-    a {
-      text-decoration: none;
-      color: white;
-      font-weight: bold;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
     span {
       color: #d9d2d2;
+    }
+  }
+  .exitBtn {
+    display: flex;
+    align-items: center;
+    width: 9.5vw;
+    justify-content: space-between;
+    text-decoration: none;
+    color: white;
+  }
+  .exitBtn:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+
+  .exitIcon {
+    display: flex;
+    width: 35px;
+    height: 35px;
+    background-color: #38b2ea;
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+
+    svg {
+      fill: #27314a;
     }
   }
   .mobileNavMid {

@@ -21,68 +21,72 @@ function Navbar() {
     <div className="navbarMain">
       <StyledNavbar>
         <div className="navWrap">
-          <div>
-            <img className="profileImg" alt="profile_img" src={Profile_img} />
-          </div>
-          <h2>KO WOON</h2>
-          <section className="menuBar">
-            <li>
-              <Link to="home" spy={true} smooth={true} activeClass="active">
-                <i className="icon">
-                  <AiOutlineHome />
-                </i>
-                <span className="menuDetail"> HOME</span>
-              </Link>
-            </li>
-            <li>
-              <Link to="about" spy={true} smooth={true} activeClass="active">
-                <i className="icon">
-                  <BsPerson />{" "}
-                </i>
-                <span> ABOUT</span>
-              </Link>
-            </li>
-            <li>
-              <Link to="skills" spy={true} smooth={true} activeClass="active">
-                <i className="icon">
-                  <FaReact />
-                </i>
-                <span> SKILLS</span>
-              </Link>
-            </li>
-            <li>
-              <Link to="resume" spy={true} smooth={true} activeClass="active">
-                <i className="icon">
-                  <AiOutlineFile />
-                </i>
-                <span> RESUME</span>
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="portfolio"
-                spy={true}
-                smooth={true}
-                activeClass="active"
-              >
-                <i className="icon">
-                  <FiBookOpen />{" "}
-                </i>
-                <span> PORTFOLIO</span>
-              </Link>
-            </li>
+          <div className="profileImgWrap">
             <div>
-              <span>Made </span>
-              <ReactTypingEffect
-                className="typingEffect"
-                speed="100"
-                eraseSpeed="100"
-                eraseDelay="1500"
-                text={["with React", "by kowoon"]}
-              />
+              <img className="profileImg" alt="profile_img" src={Profile_img} />
             </div>
+            <h2>KO WOON</h2>
+            <h3>Web developer</h3>
+          </div>
+          <div className="menuBarWrap">
+            <section className="menuBar">
+              <li>
+                <Link to="home" spy={true} smooth={true} activeClass="active">
+                  <i className="icon">
+                    <AiOutlineHome />
+                  </i>
+                  <span className="menuDetail"> Home</span>
+                </Link>
+              </li>
+              <li>
+                <Link to="about" spy={true} smooth={true} activeClass="active">
+                  <i className="icon">
+                    <BsPerson />{" "}
+                  </i>
+                  <span> About</span>
+                </Link>
+              </li>
+              <li>
+                <Link to="skills" spy={true} smooth={true} activeClass="active">
+                  <i className="icon">
+                    <FaReact />
+                  </i>
+                  <span> Skills</span>
+                </Link>
+              </li>
+              <li>
+                <Link to="resume" spy={true} smooth={true} activeClass="active">
+                  <i className="icon">
+                    <AiOutlineFile />
+                  </i>
+                  <span> Resume</span>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="portfolio"
+                  spy={true}
+                  smooth={true}
+                  activeClass="active"
+                >
+                  <i className="icon">
+                    <FiBookOpen />{" "}
+                  </i>
+                  <span> Portfolio</span>
+                </Link>
+              </li>
+              <div className="navTypingEffect">
+                <span>Made </span>
+                <ReactTypingEffect
+                  className="typingEffect"
+                  speed="100"
+                  eraseSpeed="100"
+                  eraseDelay="1500"
+                  text={["with React", "by kowoon"]}
+                />
+              </div>
 
-            {/* <li>
+              {/* <li>
             <Link to="contact" spy={true} smooth={true} activeClass="active">
               <i className="icon">
                 <BsPhone />
@@ -90,7 +94,8 @@ function Navbar() {
               <span> CONTACT</span>
             </Link>
           </li> */}
-          </section>
+            </section>
+          </div>
         </div>
       </StyledNavbar>
       <StyledNavbarMobile>
@@ -178,7 +183,7 @@ function Navbar() {
                     <span> PORTFOLIO</span>
                   </Link>
                 </li>
-                <div>
+                <div className="navTypingEffect">
                   <span>Made </span>
                   <ReactTypingEffect
                     className="typingEffect"
@@ -202,7 +207,9 @@ function Navbar() {
 export default Navbar;
 
 const StyledNavbar = styled.div`
+  font-family: "Ubuntu", sans-serif;
   animation: fadeInLeft 1s;
+  /* box-shadow: 10px 5px 5px gray; */
 
   @keyframes fadeInLeft {
     0% {
@@ -219,39 +226,87 @@ const StyledNavbar = styled.div`
   position: fixed;
   width: 20%;
   height: 100%;
+  background-color: #151b28;
   text-align: center;
-  background-color: black;
   color: white;
   overflow: auto;
+
+  .profileImgWrap {
+    width: 80%;
+    height: 100%;
+    margin: 5vh auto;
+    padding: 30px 5px;
+    background-color: #27314a;
+    border-radius: 20px;
+  }
 
   .profileImg {
     width: 45%;
     border-radius: 50%;
     object-fit: cover;
-    margin: 50px 0 20px 0;
+    /* margin: 50px 0 20px 0; */
+    box-shadow: 11px 3px 10px rgba(174, 197, 240, 0.2);
   }
   h2 {
     font-size: 1.9em;
+    font-weight: 400;
+  }
+  h3 {
+    width: 70%;
+    margin: auto;
+    padding: 10px;
+    border-radius: 30px;
+    box-shadow: 4px 5px 10px gray;
+    background-color: #151b28;
+    letter-spacing: 1px;
+    font-size: 1.2em;
+    font-weight: 300;
+  }
+
+  .menuBarWrap {
+    display: flex;
+    justify-content: center;
   }
   .menuBar {
+    justify-content: center;
     font-size: 1.3em;
     line-height: 1.9em;
     text-align: left;
-    margin-left: 3em;
+    /* margin-top: 10px; */
 
+    li a {
+      display: flex;
+      letter-spacing: 2px;
+    }
+    li a .icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 15px;
+    }
     li {
+      display: flex;
       list-style: none;
       line-height: 2.5em;
     }
 
     a {
+      background: linear-gradient(#eaeae7 0 80%);
+      background-size: 0 1px;
+      background-repeat: no-repeat;
+      transition: background-size 0.3s;
+      background-position: center calc(100% + 3px);
       text-decoration: none;
-      color: #aba6a6;
+      font-size: 1.2em;
+      color: #cfcbcb;
+
+      span {
+        font-weight: 300;
+      }
     }
     a.active {
-      font-weight: bold;
       span {
-        color: pink;
+        color: #149ddd;
       }
       i {
         color: #149ddd;
@@ -261,6 +316,8 @@ const StyledNavbar = styled.div`
     a:hover {
       cursor: pointer;
       font-size: 1.2em;
+      background-size: 100% 5px;
+
       span {
         color: white;
       }
@@ -268,6 +325,10 @@ const StyledNavbar = styled.div`
         color: #149ddd;
       }
     }
+  }
+  .navTypingEffect {
+    position: absolute;
+    bottom: 30px;
   }
   .typingEffect {
     color: #149ddd;
@@ -329,7 +390,7 @@ const StyledNavbarMobile = styled.div`
     width: 40vw;
     height: 100%;
     text-align: center;
-    background-color: black;
+    background-color: #151b28;
     color: white;
   }
 
@@ -362,7 +423,7 @@ const StyledNavbarMobile = styled.div`
     a.active {
       font-weight: bold;
       span {
-        color: pink;
+        color: #149ddd;
       }
       i {
         color: #149ddd;
@@ -379,6 +440,10 @@ const StyledNavbarMobile = styled.div`
         color: #149ddd;
       }
     }
+  }
+  .navTypingEffect {
+    position: absolute;
+    bottom: 30px;
   }
   .typingEffect {
     color: #149ddd;

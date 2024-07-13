@@ -117,18 +117,18 @@ function About() {
             </p>
             <div className="resumetitle">
               <div className="resumediv">
-                <h3>Education</h3>
-                <div>
-                  <h4>경기대학교</h4>
-                  <ul>
-                    <li>경제학과 학사 졸업</li>
-                    <li>2011.3 ~ 2016.2</li>
-                  </ul>
-                </div>
-              </div>
-              <div className="resumediv">
                 <h3>Experience</h3>
                 <div>
+                  <h4>(주)이스턴스카이</h4>
+                  <ul>
+                    <li>Role : Front-end (React 웹제작)</li>
+                    <li>2023. 05. 01 ~ 2024. 04. 30</li>
+                    <li>디바이스 응급구조 신호 실시간 정보확인 웹 제작</li>
+                    <br />
+                    <span className="blickEff">
+                      - 자세한 내용은 포트폴리오 확인해주세요. -
+                    </span>
+                  </ul>
                   <h4>JUSTCODE 개발 부트캠프 6기 수료</h4>
                   <ul>
                     <li>Foundation : Front-end</li>
@@ -138,6 +138,16 @@ function About() {
                   <ul>
                     <li>경영관리팀 - 회계, 사무</li>
                     <li>2019. 05. 27 ~ 2022. 07. 28</li>
+                  </ul>
+                </div>
+              </div>
+              <div className="resumediv">
+                <h3>Education</h3>
+                <div>
+                  <h4>경기대학교</h4>
+                  <ul>
+                    <li>경제학과 학사 졸업</li>
+                    <li>2011.3 ~ 2016.2</li>
                   </ul>
                 </div>
               </div>
@@ -165,6 +175,19 @@ const StyledAbout = styled.div`
   .aboutLeft {
     width: 58%;
     /* background-color: gray; */
+  }
+  @keyframes blink {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+
+  .blickEff {
+    animation: blink 1s infinite;
   }
   .aboutRight {
     display: flex;
@@ -229,12 +252,14 @@ const StyledAbout = styled.div`
   .resumetitle {
     display: flex;
     width: 100%;
+    justify-content: space-between;
   }
   .resumediv {
     width: 50%;
+    padding-left: 5vw;
 
     h3 {
-      width: 28%;
+      width: 30%;
       color: white;
       background-color: #3b7ea6;
       font-size: 1.6em;
