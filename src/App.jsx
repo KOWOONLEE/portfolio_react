@@ -6,10 +6,10 @@ import SecondProject from "./pages/SecondProject";
 import ProjectData from "./assets/data/project.json";
 import ThirdProject from "./pages/ThirdProject";
 import FourthProject from "./pages/FourthProject";
+import EasternskyProject from "./pages/easternskyProject";
 
 const App = () => {
   const [project, setProject] = useState(ProjectData);
-  const [path, setPath] = useState("");
 
   return (
     <BrowserRouter basename={process.env.PUBLIC_URL}>
@@ -30,6 +30,12 @@ const App = () => {
         <Route
           path="/project/fourth"
           element={<FourthProject project={project} setProject={setProject} />}
+        />
+        <Route
+          path="/project/easternsky"
+          element={
+            <EasternskyProject project={project} setProject={setProject} />
+          }
         />
       </Routes>
     </BrowserRouter>

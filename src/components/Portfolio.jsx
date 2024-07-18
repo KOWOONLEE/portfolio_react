@@ -6,6 +6,7 @@ import fourthImg from "../assets/images/project/4th_main.png";
 import projectData from "../assets/data/project.json";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+// import images from "../assets/images";
 
 const Portfolio = () => {
   const navigate = useNavigate();
@@ -53,7 +54,7 @@ const Portfolio = () => {
               </strong>
             </p>
             <div className="portfolioContainer">
-              <div
+              {/* <div
                 className="portfolioWrap"
                 onClick={() => {
                   navigate("/project/first");
@@ -144,26 +145,37 @@ const Portfolio = () => {
                   <strong>프로젝트 내 역할 :</strong>
                   {projectData[3].projectRoll}
                 </p>
-              </div>
+              </div> */}
 
-              {/* {projectData.map((item, idx) => (
-                <div
-                  className="portfolioWrap"
-                  key="item"
-                  onClick={() => {
-                    navigate(`/project/${item.id}`);
-                  }}
-                > */}
-              {/* <div className="portfolioWrap" value="item" key="id"> */}
-              {/* <img src={item.projectImg} alt="project" />
-                  <h2>{item.projectName}</h2>
-                  <p className="projectSub">{item.projectTitle}</p>
-                  <hr />
-                  <p>프로젝트 기술 : {item.projectSkill}</p>
-                  <p>사이트 소개 : {item.projectIntro}</p>
-                  <p>프로젝트 내 역할 : {item.projectRoll}</p>{" "}
-                </div>
-              ))} */}
+              {projectData.map((project, i) => {
+                const imgPath = require(`../assets/images/project/mainImg/main_${project.id}.png`);
+                return (
+                  <div
+                    key={projectData[i].id}
+                    className="portfolioWrap "
+                    onClick={() => {
+                      navigate(`/project/${project.navigate}`);
+                    }}
+                  >
+                    <img src={imgPath} alt="fourthimg" />
+                    <h2>{projectData[i].projectName}</h2>
+                    <p>{projectData[i].projectTitle}</p>
+                    <hr />
+                    <p>
+                      <strong>프로젝트 기술 : </strong>
+                      {projectData[i].projectSkill}
+                    </p>
+                    <p>
+                      <strong>사이트 소개 : </strong>
+                      {projectData[i].projectIntro}
+                    </p>
+                    <p>
+                      <strong>프로젝트 내 역할 :</strong>
+                      {projectData[i].projectRoll}
+                    </p>
+                  </div>
+                );
+              })}
             </div>
 
             <div className="portfolioContainer"></div>

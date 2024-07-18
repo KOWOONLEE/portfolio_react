@@ -10,6 +10,10 @@ import firstLogin from "../assets/images/project/first/first_login.png";
 import firstSignup from "../assets/images/project/first/first_signup.png";
 import firstAgreement from "../assets/images/project/first/first_agreement.png";
 import firstAgreement2 from "../assets/images/project/first/first_agreement_2.png";
+import { useLocation } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { setPath } from "../redux/pathSlice";
 
 const FirstProject = () => {
   const settings = {
@@ -20,6 +24,17 @@ const FirstProject = () => {
     slidesToScroll: 1,
     // autoplay: true,
   };
+
+  const location = useLocation();
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    const fullPath = location.pathname;
+    const pathParts = fullPath.split("/");
+    const extractedPath = pathParts[2] || ""; // 두 번째 슬래시 이후의 값, 없으면 빈 문자열
+    dispatch(setPath(extractedPath));
+  }, [location, dispatch]);
+
   return (
     <StyledProject>
       <DetailNav />

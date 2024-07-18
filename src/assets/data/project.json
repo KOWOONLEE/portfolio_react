@@ -1,38 +1,57 @@
 [
   {
+    "id": "5",
+    "navigate": "easternsky",
+    "projectFilter": "business Project",
+    "projectName": "ESG - Project",
+    "projectTitle": "응급 디바이스 비상상황 알림 전송 및 확인 웹페이지",
+    "projectSkill": " React.js, Node.js, docker, AWS",
+    "projectIntro": "디바이스 MQTT 응급상황 전송 신호 웹 알림 시스템",
+    "projectRoll": "응급신호 데이터 처리 및 관리",
+    "imgSrc": "../images/project/easternsky/main.png"
+  },
+  {
     "id": "1",
+    "navigate": "first",
     "projectFilter": "Team Project",
     "projectName": "일차 一茶",
     "projectTitle": "카페 음료 주문 모바일웹 사이트",
     "projectSkill": " React.js, Typescript",
     "projectIntro": "스마트오더를 이용한 음료 주문",
-    "projectRoll": "메인페이지, 매장 검색, 상세페이지 리뷰, 기타 페이지"
+    "projectRoll": "메인페이지, 매장 검색, 상세페이지 리뷰, 기타 페이지",
+    "imgSrc": "../images/project/first/first_main.png"
   },
   {
     "id": "2",
+    "navigate": "second",
     "projectFilter": "Team Project",
     "projectName": "HALLO",
     "projectTitle": "팀원 모집 커뮤니티 사이트",
     "projectSkill": " React.js",
     "projectIntro": "스터디,프로젝트 팀원 모집",
-    "projectRoll": "로그인, 회원가입, 이용약관"
+    "projectRoll": "로그인, 회원가입, 이용약관",
+    "imgSrc": "../images/project/second/second_main.png"
   },
   {
     "id": "3",
+    "navigate": "third",
     "projectFilter": "Team Project",
     "projectName": "Mini 프로젝트_기업협업 pre-onboarding",
     "projectTitle": "오디오 플레이어",
     "projectSkill": " React.js",
     "projectIntro": "오디오 플레이어 및 녹음 기능",
-    "projectRoll": "오디오 플레이어, 플레이 리스트"
+    "projectRoll": "오디오 플레이어, 플레이 리스트",
+    "imgSrc": "../images/project/third/3rd_main.png"
   },
   {
     "id": "4",
+    "navigate": "forth",
     "projectFilter": "Personal Project",
     "projectName": "Mini 프로젝트_기업협업 pre-onboarding",
     "projectTitle": "병원예약 홈페이지",
     "projectSkill": " React.js",
     "projectIntro": "localstorage이용한 병원 예약",
-    "projectRoll": "로그인, 병원 에약, 예약 조회"
+    "projectRoll": "로그인, 병원 에약, 예약 조회",
+    "imgSrc": "../images/project/fourth/4th_main.png"
   }
 ]

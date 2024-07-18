@@ -6,9 +6,12 @@ import { FaArrowRight } from "react-icons/fa";
 import Profile_img from "../assets/images/kowoon_profile.jpeg";
 
 import styled from "styled-components";
+import { useSelector } from "react-redux";
 
 const DetailNav = () => {
   const [mobileNav, setMobileNav] = useState(false);
+
+  const path = useSelector((state) => state.path);
 
   const handleNav = () => {
     setMobileNav(!mobileNav);
@@ -18,6 +21,7 @@ const DetailNav = () => {
   const [secondHover, setSecondHover] = useState("");
   const [thirdHover, setThirdHover] = useState("");
   const [fourthHover, setFourthHover] = useState("");
+  const [easternHover, setEasternHover] = useState("");
 
   return (
     <StyledNav>
@@ -45,12 +49,24 @@ const DetailNav = () => {
               }}
             >
               <h2> PROJECT DETAILS</h2>
-              <h3>Project &gt; now project </h3>
+              <h3>Project &gt; {path} </h3>
             </div>
           </div>
         </div>
 
         <div className="middleMenu">
+          <span
+            onMouseEnter={() => {
+              setEasternHover(true);
+            }}
+            onMouseLeave={() => {
+              setEasternHover(false);
+            }}
+            onClick={() => navigate("/project/easternsky")}
+          >
+            easternsky
+          </span>
+          <span>|</span>
           <span
             onMouseEnter={() => {
               setFirstHover(true);
@@ -115,6 +131,9 @@ const DetailNav = () => {
         <div className="mobileNavMid">
           <div className="mobileNavWrap">
             <ul className="mobileNavList">
+              <li onClick={() => navigate("/project/easternsky")}>
+                business project - ESG - 응급 디바이스 비상상황 확인 웹페이지
+              </li>
               <li onClick={() => navigate("/project/first")}>
                 first project - Hallo 팀원 모집 사이트
               </li>
@@ -132,6 +151,13 @@ const DetailNav = () => {
         </div>
       ) : null}
       <Divhover>
+        {easternHover ? (
+          <div className="first">
+            <span> ESG - 응급 디바이스 비상상황 확인 웹페이지</span>
+          </div>
+        ) : (
+          ""
+        )}
         {firstHover ? (
           <div className="first">
             <span> Hallo - 스터디모집 커뮤니케이션 사이트 제작</span>

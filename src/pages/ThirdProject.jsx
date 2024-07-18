@@ -6,6 +6,10 @@ import "slick-carousel/slick/slick-theme.css";
 import { AiFillGithub } from "react-icons/ai";
 import { AiOutlineFileText } from "react-icons/ai";
 import thirdMain from "../assets/images/project/third/3rd_main.png";
+import { useLocation } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { setPath } from "../redux/pathSlice";
 
 const ThirdProject = () => {
   const settings = {
@@ -16,6 +20,17 @@ const ThirdProject = () => {
     slidesToScroll: 1,
     // autoplay: true,
   };
+
+  const location = useLocation();
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    const fullPath = location.pathname;
+    const pathParts = fullPath.split("/");
+    const extractedPath = pathParts[2] || "";
+    dispatch(setPath(extractedPath));
+  }, [location, dispatch]);
+
   return (
     <StyledProject>
       <DetailNav />

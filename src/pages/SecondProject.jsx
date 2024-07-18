@@ -10,6 +10,10 @@ import secondMap from "../assets/images/project/second/second_map.png";
 import secondMain from "../assets/images/project/second/second_main_2.png";
 import { AiFillGithub } from "react-icons/ai";
 import { AiOutlineFileText } from "react-icons/ai";
+import { useLocation } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { setPath } from "../redux/pathSlice";
+import { useEffect } from "react";
 
 const SecondProject = () => {
   const settings = {
@@ -20,6 +24,15 @@ const SecondProject = () => {
     slidesToScroll: 1,
     // autoplay: true,
   };
+  const location = useLocation();
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    const fullPath = location.pathname;
+    const pathParts = fullPath.split("/");
+    const extractedPath = pathParts[2] || "";
+    dispatch(setPath(extractedPath));
+  }, [location, dispatch]);
 
   return (
     <StyledProject>

@@ -9,6 +9,10 @@ import fourthLogin from "../assets/images/project/fourth/4th_login.png";
 import fourthreser from "../assets/images/project/fourth/4th_reservation.png";
 import fourthcal from "../assets/images/project/fourth/4th_calendar.png";
 import fourthno from "../assets/images/project/fourth/4th_not.png";
+import { useLocation } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { setPath } from "../redux/pathSlice";
 
 const FirstProject = () => {
   const settings = {
@@ -19,6 +23,17 @@ const FirstProject = () => {
     slidesToScroll: 1,
     // autoplay: true,
   };
+
+  const location = useLocation();
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    const fullPath = location.pathname;
+    const pathParts = fullPath.split("/");
+    const extractedPath = pathParts[2] || "";
+    dispatch(setPath(extractedPath));
+  }, [location, dispatch]);
+
   return (
     <StyledProject>
       <DetailNav />
