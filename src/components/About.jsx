@@ -300,6 +300,7 @@ const StyledAbout = styled.div`
 
   .skillsSection {
     background-color: #f4f6fc;
+    width: 80vw;
   }
   table {
     width: 88%;

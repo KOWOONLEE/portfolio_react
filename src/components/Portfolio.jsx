@@ -1,15 +1,27 @@
 import styled from "styled-components";
-import firstImg from "../assets/images/project/first/first_main.png";
-import secondImg from "../assets/images/second_main.png";
-import thirdMain from "../assets/images/project/third/3rd_main.png";
-import fourthImg from "../assets/images/project/4th_main.png";
 import projectData from "../assets/data/project.json";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-// import images from "../assets/images";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
 
 const Portfolio = () => {
   const navigate = useNavigate();
+  const settings = {
+    className: "center",
+    centerMode: true,
+    infinite: true,
+    centerPadding: "60px",
+    slidesToShow: 3,
+    speed: 500,
+    variableWidth: false,
+  };
+
   // const projectFillters = [
   //   {
   //     id: 1,
@@ -54,131 +66,88 @@ const Portfolio = () => {
               </strong>
             </p>
             <div className="portfolioContainer">
-              {/* <div
-                className="portfolioWrap"
-                onClick={() => {
-                  navigate("/project/first");
-                }}
-              >
-                <img className="firstImg" src={firstImg} alt="firstimg" />
-                <h2>{projectData[1].projectName}</h2>
-                <p>{projectData[1].projectTitle}</p>
-                <hr />
-                <p>
-                  <strong>프로젝트 기술 : </strong>
-                  {projectData[1].projectSkill}
-                </p>
-                <p>
-                  <strong>사이트 소개 : </strong>
-                  {projectData[1].projectIntro}
-                </p>
-                <p>
-                  <strong>프로젝트 내 역할 :</strong>
-                  {projectData[1].projectRoll}
-                </p>
-              </div>
-              <div
-                className="portfolioWrap"
-                onClick={() => {
-                  navigate("/project/second");
-                }}
-              >
-                <img src={secondImg} alt="secondimg" />
-                <h2>{projectData[0].projectName}</h2>
-                <p>{projectData[0].projectTitle}</p>
-                <hr />
-                <p>
-                  <strong>프로젝트 기술 : </strong>
-                  {projectData[0].projectSkill}
-                </p>
-                <p>
-                  <strong>사이트 소개 : </strong>
-                  {projectData[0].projectIntro}
-                </p>
-                <p>
-                  <strong>프로젝트 내 역할 :</strong>
-                  {projectData[0].projectRoll}
-                </p>
-              </div>
-              <div
-                className="portfolioWrap "
-                onClick={() => {
-                  navigate("/project/third");
-                }}
-              >
-                <img src={thirdMain} alt="thirdimg" />
-                <h2>{projectData[2].projectName}</h2>
-                <p>{projectData[2].projectTitle}</p>
-                <hr />
-                <p>
-                  <strong>프로젝트 기술 : </strong>
-                  {projectData[2].projectSkill}
-                </p>
-                <p>
-                  <strong>사이트 소개 : </strong>
-                  {projectData[2].projectIntro}
-                </p>
-                <p>
-                  <strong>프로젝트 내 역할 :</strong>
-                  {projectData[2].projectRoll}
-                </p>
-              </div>
-              <div
-                className="portfolioWrap "
-                onClick={() => {
-                  navigate("/project/fourth");
-                }}
-              >
-                <img src={fourthImg} alt="fourthimg" />
-                <h2>{projectData[3].projectName}</h2>
-                <p>{projectData[3].projectTitle}</p>
-                <hr />
-                <p>
-                  <strong>프로젝트 기술 : </strong>
-                  {projectData[3].projectSkill}
-                </p>
-                <p>
-                  <strong>사이트 소개 : </strong>
-                  {projectData[3].projectIntro}
-                </p>
-                <p>
-                  <strong>프로젝트 내 역할 :</strong>
-                  {projectData[3].projectRoll}
-                </p>
+              <div className="portfolioWrap">
+                <Swiper
+                  slidesPerView={2}
+                  spaceBetween={30}
+                  centeredSlides={true}
+                  loop={true}
+                  navigation={true}
+                  pagination={{
+                    clickable: true,
+                  }}
+                  modules={[Pagination, Navigation]}
+                  className="mySwiper"
+                >
+                  {projectData.map((project, i) => {
+                    const imgPath = require(`../assets/images/project/mainImg/main_${project.id}.png`);
+                    return (
+                      <SwiperSlide>
+                        <div
+                          className="SwiperInner"
+                          key={projectData[i].id}
+                          onClick={() => {
+                            navigate(`/project/${project.navigate}`);
+                          }}
+                        >
+                          <img src={imgPath} alt="fourthimg" />
+                          <h2>{projectData[i].projectName}</h2>
+                          <p>{projectData[i].projectTitle}</p>
+                          <hr />
+                          <p>
+                            <strong>프로젝트 기술 : </strong>
+                            {projectData[i].projectSkill}
+                          </p>
+                          <p>
+                            <strong>사이트 소개 : </strong>
+                            {projectData[i].projectIntro}
+                          </p>
+                          <p>
+                            <strong>프로젝트 내 역할 :</strong>
+                            {projectData[i].projectRoll}
+                          </p>
+                        </div>
+                      </SwiperSlide>
+                    );
+                  })}
+                </Swiper>
+                {/* <div className="portfolioWrap">
+                <div className="sliderWrap">
+                  <Slider {...settings}>
+                    {projectData.map((project, i) => {
+                      const imgPath = require(`../assets/images/project/mainImg/main_${project.id}.png`);
+                      return (
+                        <div
+                          key={projectData[i].id}
+                          className="portfolioInner"
+                          onClick={() => {
+                            navigate(`/project/${project.navigate}`);
+                          }}
+                        >
+                          <img src={imgPath} alt="fourthimg" />
+                          <h2>{projectData[i].projectName}</h2>
+                          <p>{projectData[i].projectTitle}</p>
+                          <hr />
+                          <p>
+                            <strong>프로젝트 기술 : </strong>
+                            {projectData[i].projectSkill}
+                          </p>
+                          <p>
+                            <strong>사이트 소개 : </strong>
+                            {projectData[i].projectIntro}
+                          </p>
+                          <p>
+                            <strong>프로젝트 내 역할 :</strong>
+                            {projectData[i].projectRoll}
+                          </p>
+                        </div>
+                      );
+                    })}
+                  </Slider>
+                </div>
               </div> */}
-
-              {projectData.map((project, i) => {
-                const imgPath = require(`../assets/images/project/mainImg/main_${project.id}.png`);
-                return (
-                  <div
-                    key={projectData[i].id}
-                    className="portfolioWrap "
-                    onClick={() => {
-                      navigate(`/project/${project.navigate}`);
-                    }}
-                  >
-                    <img src={imgPath} alt="fourthimg" />
-                    <h2>{projectData[i].projectName}</h2>
-                    <p>{projectData[i].projectTitle}</p>
-                    <hr />
-                    <p>
-                      <strong>프로젝트 기술 : </strong>
-                      {projectData[i].projectSkill}
-                    </p>
-                    <p>
-                      <strong>사이트 소개 : </strong>
-                      {projectData[i].projectIntro}
-                    </p>
-                    <p>
-                      <strong>프로젝트 내 역할 :</strong>
-                      {projectData[i].projectRoll}
-                    </p>
-                  </div>
-                );
-              })}
+              </div>
             </div>
-
-            <div className="portfolioContainer"></div>
           </div>
         </section>
       </StyledPortfolio>
@@ -188,57 +157,93 @@ const Portfolio = () => {
 export default Portfolio;
 
 const StyledPortfolio = styled.div`
-  display: inline-block;
+  /* display: inline-block; */
+  /* width: 100%; */
 
   .portfolioSection {
     background-color: #f4f6fc;
+    width: 70vw;
+    margin: 0;
+    padding: 0;
   }
   .portfolioContainer {
     display: flex;
-    justify-content: center;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: #000;
+    width: 100%;
+    /* height: 70vh; */
+    overflow: hidden;
+    position: relative;
+    box-sizing: border-box;
+    background: linear-gradient(45deg, #ac8bef, #2ddbdc);
   }
-  .radiostyle {
-    display: flex;
-    width: 35vw;
-    background-color: white;
-    text-align: center;
-    align-items: center;
-    padding: 0 20px 0 23px;
-    border-radius: 30px;
+  .center {
+    width: 100%;
+    margin: 0 50px;
   }
-
+  .slick-list {
+  }
   .portfolioWrap {
-    display: inline-block;
-    width: calc(80% / 3);
-    height: 100%;
-    transition: 0.3s;
+    width: 100%;
+    margin: 30px;
+    padding: 30px;
+    /* transition: 0.3s;
     position: relative;
     color: black;
     background-color: white;
-    margin: 15px;
-    padding: 10px;
+    background-color: pink;
+
+    border: 1px solid black;
     overflow: hidden;
-    z-index: 1;
+    z-index: 1; */
+    /* display: flex; */
+    position: relative;
+    /* flex-direction: column; */
+    /* align-content: center; */
+    overflow: hidden;
+  }
+  .sliderWrap {
+    width: 100%;
+    .slick-list {
+      width: 800px;
+    }
+  }
+
+  .portfolioInner {
+    width: 300px;
+    /* height: 100%; */
+    /* margin: 30px 0;
+    padding: 40px;
+    box-sizing: border-box;
+    background-color: gray; */
+  }
+
+  .portfolioInner {
+    background-color: white;
+    /* position: relative;
+    width: 5vw; */
 
     img {
-      width: 100%;
+      width: 200px;
+      object-fit: center;
     }
     p {
       font-size: 1em;
       line-height: 1.5em;
     }
   }
-
+  /* 
   .portfolioWrap:hover {
     transform: scale(1.1);
     border: 3px solid #38b2ea;
     z-index: 999;
     cursor: pointer;
-  }
+  } */
 
-  @media screen and (max-width: 768px) {
+  /* @media screen and (max-width: 768px) {
     #portfolio {
-      /* width: 100%; */
+      width: 100%;
     }
     .portfolioContainer {
       display: block;
@@ -246,5 +251,38 @@ const StyledPortfolio = styled.div`
     .portfolioWrap {
       width: 90%;
     }
+  } */
+
+  .swiper {
+    width: 100%;
+    height: 100%;
+  }
+
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+
+    width: 100%;
+
+    /* Center slide text vertically */
+    display: flex;
+    justify-content: center;
+    object-fit: cover;
+    position: relative;
+    /* align-items: center; */
+  }
+  .SwiperInner {
+    width: 100%;
+    padding: 10%;
+    background-color: rgba(255, 255, 255, 0.4);
+  }
+
+  .swiper-slide img {
+    position: relative;
+    width: 100%;
+    z-index: 1;
+
+    /* height: 100%; */
+    /* object-fit: over; */
   }
 `;
