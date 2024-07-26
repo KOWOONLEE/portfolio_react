@@ -7,6 +7,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
+import { main2 } from "../assets/images/project/mainImg/main_2.png";
 import "swiper/css";
 import "swiper/css/pagination";
 
@@ -81,6 +82,12 @@ const Portfolio = () => {
                 >
                   {projectData.map((project, i) => {
                     const imgPath = require(`../assets/images/project/mainImg/main_${project.id}.png`);
+                    const imgClass =
+                      imgPath ===
+                      require(`../assets/images/project/mainImg/main_2.png`)
+                        ? "specificImage"
+                        : "defaultImage";
+
                     return (
                       <SwiperSlide>
                         <div
@@ -90,7 +97,11 @@ const Portfolio = () => {
                             navigate(`/project/${project.navigate}`);
                           }}
                         >
-                          <img src={imgPath} alt="fourthimg" />
+                          <img
+                            className={imgClass}
+                            src={imgPath}
+                            alt={`main_${projectData[i].id}`}
+                          />
                           <h2>{projectData[i].projectName}</h2>
                           <p>{projectData[i].projectTitle}</p>
                           <hr />
@@ -255,7 +266,7 @@ const StyledPortfolio = styled.div`
 
   .swiper {
     width: 100%;
-    height: 100%;
+    height: 80vh;
   }
 
   .swiper-slide {
@@ -277,12 +288,17 @@ const StyledPortfolio = styled.div`
     background-color: rgba(255, 255, 255, 0.4);
   }
 
-  .swiper-slide img {
+  /* .swiper-slide img {
     position: relative;
     width: 100%;
     z-index: 1;
-
-    /* height: 100%; */
-    /* object-fit: over; */
+  } */
+  .defaultImage {
+    position: relative;
+    width: 100%;
+    z-index: 1;
+  }
+  .specificImage {
+    width: 60%;
   }
 `;
