@@ -22,21 +22,18 @@ function Main() {
 export default Main;
 
 const StyledMain = styled.div`
-  display: inline-block;
+  display: flex;
   width: 100%;
   height: 100vh;
-  /* flex-direction: row; */
-  /* align-items: stretch; */
-  /* flex-direction: row; */
-  /* justify-content: space-between; */
+  box-sizing: border-box;
+
   .mainPage {
-    margin: 0 20px 0 20px;
+    margin: 0 20px;
   }
   @media screen and (max-width: 768px) {
     .mainWrap {
       display: block;
       width: 100%;
-      /* margin-left: 20%; */
     }
   }
 `;

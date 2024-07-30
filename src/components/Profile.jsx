@@ -69,22 +69,21 @@ const StyledProfile = styled.div`
   }
 
   display: flex;
-  width: 80vw;
   height: 100%;
   margin-left: 20%;
-  position: relative;
+
   animation: fadeInLeft 1s;
 
   .profileBackground {
-    /* display: inline-block; */
-    position: relative;
+    display: inline-block;
+
     width: 80vw;
     /* z-index: -1; */
   }
 
   .mainBackground {
     display: inline-block;
-    position: relative;
+
     width: 80vw;
     height: 100vh;
     object-fit: cover;
@@ -104,7 +103,7 @@ const StyledProfile = styled.div`
 
   .typingName {
     position: absolute;
-    z-index: 2;
+    z-index: 0;
     /* min-width: 300px; */
     width: 80vw;
     height: 100vh;

@@ -1,55 +1,16 @@
 import styled from "styled-components";
 import projectData from "../assets/data/project.json";
-import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
-import { main2 } from "../assets/images/project/mainImg/main_2.png";
 import "swiper/css";
 import "swiper/css/pagination";
+import "swiper/css/navigation";
 
 const Portfolio = () => {
   const navigate = useNavigate();
-  const settings = {
-    className: "center",
-    centerMode: true,
-    infinite: true,
-    centerPadding: "60px",
-    slidesToShow: 3,
-    speed: 500,
-    variableWidth: false,
-  };
-
-  // const projectFillters = [
-  //   {
-  //     id: 1,
-  //     name: "All",
-  //   },
-  //   {
-  //     id: 2,
-  //     name: "Team Project",
-  //   },
-  //   {
-  //     id: 3,
-  //     name: "Personal Project",
-  //   },
-  // ];
-
-  // useEffect(() => {
-  //   const filteredData = projectData.filter((data) =>
-  //     data.projectFilter.includes(projectFillters.name)
-  //   );
-  //   setProjectList(filteredData);
-  // }, [projectFillters.name]);
-
-  // const selectChange = (e) => {
-  //   const value = e.target.value;
-  //   setSelectedOption(value);
-  //   setProjectList(projectList);
-  // };
 
   return (
     <>
@@ -122,41 +83,6 @@ const Portfolio = () => {
                     );
                   })}
                 </Swiper>
-                {/* <div className="portfolioWrap">
-                <div className="sliderWrap">
-                  <Slider {...settings}>
-                    {projectData.map((project, i) => {
-                      const imgPath = require(`../assets/images/project/mainImg/main_${project.id}.png`);
-                      return (
-                        <div
-                          key={projectData[i].id}
-                          className="portfolioInner"
-                          onClick={() => {
-                            navigate(`/project/${project.navigate}`);
-                          }}
-                        >
-                          <img src={imgPath} alt="fourthimg" />
-                          <h2>{projectData[i].projectName}</h2>
-                          <p>{projectData[i].projectTitle}</p>
-                          <hr />
-                          <p>
-                            <strong>프로젝트 기술 : </strong>
-                            {projectData[i].projectSkill}
-                          </p>
-                          <p>
-                            <strong>사이트 소개 : </strong>
-                            {projectData[i].projectIntro}
-                          </p>
-                          <p>
-                            <strong>프로젝트 내 역할 :</strong>
-                            {projectData[i].projectRoll}
-                          </p>
-                        </div>
-                      );
-                    })}
-                  </Slider>
-                </div>
-              </div> */}
               </div>
             </div>
           </div>
@@ -168,14 +94,17 @@ const Portfolio = () => {
 export default Portfolio;
 
 const StyledPortfolio = styled.div`
-  /* display: inline-block; */
-  /* width: 100%; */
+  display: inline-block;
+  width: 100%;
+  box-sizing: border-box;
 
   .portfolioSection {
     background-color: #f4f6fc;
-    width: 70vw;
-    margin: 0;
-    padding: 0;
+    width: 75vw;
+  }
+  .paddingMargin {
+    padding: 30px;
+    margin-bottom: 20px;
   }
   .portfolioContainer {
     display: flex;
@@ -183,9 +112,6 @@ const StyledPortfolio = styled.div`
     font-size: 14px;
     color: #000;
     width: 100%;
-    /* height: 70vh; */
-    overflow: hidden;
-    position: relative;
     box-sizing: border-box;
     background: linear-gradient(45deg, #ac8bef, #2ddbdc);
   }
@@ -199,41 +125,21 @@ const StyledPortfolio = styled.div`
     width: 100%;
     margin: 30px;
     padding: 30px;
-    /* transition: 0.3s;
-    position: relative;
-    color: black;
-    background-color: white;
-    background-color: pink;
-
-    border: 1px solid black;
-    overflow: hidden;
-    z-index: 1; */
-    /* display: flex; */
-    position: relative;
-    /* flex-direction: column; */
-    /* align-content: center; */
+    /* position: relative; */
     overflow: hidden;
   }
   .sliderWrap {
-    width: 100%;
     .slick-list {
       width: 800px;
     }
   }
 
   .portfolioInner {
-    width: 300px;
-    /* height: 100%; */
-    /* margin: 30px 0;
-    padding: 40px;
-    box-sizing: border-box;
-    background-color: gray; */
+    width: 200px;
   }
 
   .portfolioInner {
     background-color: white;
-    /* position: relative;
-    width: 5vw; */
 
     img {
       width: 200px;
@@ -244,25 +150,6 @@ const StyledPortfolio = styled.div`
       line-height: 1.5em;
     }
   }
-  /* 
-  .portfolioWrap:hover {
-    transform: scale(1.1);
-    border: 3px solid #38b2ea;
-    z-index: 999;
-    cursor: pointer;
-  } */
-
-  /* @media screen and (max-width: 768px) {
-    #portfolio {
-      width: 100%;
-    }
-    .portfolioContainer {
-      display: block;
-    }
-    .portfolioWrap {
-      width: 90%;
-    }
-  } */
 
   .swiper {
     width: 100%;
@@ -272,15 +159,11 @@ const StyledPortfolio = styled.div`
   .swiper-slide {
     text-align: center;
     font-size: 18px;
-
-    width: 100%;
-
-    /* Center slide text vertically */
+    /* width: 100%; */
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
     object-fit: cover;
     position: relative;
-    /* align-items: center; */
   }
   .SwiperInner {
     width: 100%;
@@ -288,11 +171,6 @@ const StyledPortfolio = styled.div`
     background-color: rgba(255, 255, 255, 0.4);
   }
 
-  /* .swiper-slide img {
-    position: relative;
-    width: 100%;
-    z-index: 1;
-  } */
   .defaultImage {
     position: relative;
     width: 100%;
@@ -300,5 +178,14 @@ const StyledPortfolio = styled.div`
   }
   .specificImage {
     width: 60%;
+  }
+  .swiper-button-prev,
+  .swiper-button-next {
+    background: linear-gradient(45deg, #ac8bef, #2ddbdc);
+    color: transparent;
+    background-clip: text;
+  }
+
+  .swiper-pagination-bullet-active {
   }
 `;

@@ -162,11 +162,10 @@ function About() {
 }
 export default About;
 const StyledAbout = styled.div`
-  display: inline-block;
   /* position: fixed; */
-  width: cal(80%-20px);
+  width: cal(70%-20px);
   margin-left: 20%;
-  padding: 20px;
+  /* padding: 20px; */
 
   .aboutWrap {
     display: flex;
@@ -198,7 +197,7 @@ const StyledAbout = styled.div`
   }
   .aboutRightWrap {
     display: flex;
-    width: 90%;
+    width: 100%;
     height: 95%;
     padding: 6px;
     background-color: #e4f3fa;
@@ -300,7 +299,6 @@ const StyledAbout = styled.div`
 
   .skillsSection {
     background-color: #f4f6fc;
-    width: 80vw;
   }
   table {
     width: 88%;
