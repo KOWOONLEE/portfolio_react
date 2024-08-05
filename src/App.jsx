@@ -7,12 +7,14 @@ import ProjectData from "./assets/data/project.json";
 import ThirdProject from "./pages/ThirdProject";
 import FourthProject from "./pages/FourthProject";
 import EasternskyProject from "./pages/easternskyProject";
+import MouseCursor from "./components/MouseCursor";
 
 const App = () => {
   const [project, setProject] = useState(ProjectData);
 
   return (
     <BrowserRouter basename={process.env.PUBLIC_URL}>
+      <MouseCursor />
       <Routes>
         <Route path="/" element={<Main />} />
         <Route

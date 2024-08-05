@@ -3,32 +3,6 @@ import ReactTypingEffect from "react-typing-effect";
 import MainImg from "../assets/images/kowooni_main.jpeg";
 
 function Profile() {
-  // const [title, setTitle] = useState("");
-  // const [count, setCount] = useState(0);
-  // const typingWord = "Web Developer";
-
-  // useEffect(() => {
-  //   const typingInterval = setInterval(() => {
-  //     setTitle((prevTitleValue) => {
-  //       let result = prevTitleValue
-  //         ? prevTitleValue + typingWord[count]
-  //         : typingWord[0];
-  //       setCount(count + 1);
-
-  //       if (count >= typingWord.length) {
-  //         setCount(0);
-  //         setTitle("");
-  //       }
-
-  //       return result;
-  //     });
-  //   }, 200);
-
-  //   return () => {
-  //     clearInterval(typingInterval);
-  //   };
-  // });
-
   return (
     <div id="home" className="App" style={{ width: "99vw" }}>
       <StyledProfile>
@@ -39,7 +13,6 @@ function Profile() {
           <h2>LEE KO WOON</h2>
           <h3 className="typingword">
             <span>I'm </span>
-            {/* I'm <span>{title}</span> */}
             <ReactTypingEffect
               speed="150"
               eraseSpeed="100"
@@ -87,24 +60,11 @@ const StyledProfile = styled.div`
     width: 80vw;
     height: 100vh;
     object-fit: cover;
-
-    /* overflow-x: hidden; */
   }
-
-  /* .typing {
-    width: 100%;
-    height: 100%;
-    background-color: gray;
-    opacity: 0.5;
-    color: white;
-    font-size: 3em;
-    font-weight: bold;
-  } */
 
   .typingName {
     position: absolute;
     z-index: 0;
-    /* min-width: 300px; */
     width: 80vw;
     height: 100vh;
     overflow-x: hidden;

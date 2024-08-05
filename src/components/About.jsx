@@ -123,7 +123,7 @@ function About() {
                   <ul>
                     <li>Role : Front-end (React 웹제작)</li>
                     <li>2023. 05. 01 ~ 2024. 04. 30</li>
-                    <li>디바이스 응급구조 신호 실시간 정보확인 웹 제작</li>
+                    <li>IoT 디바이스 응급구조 신호 실시간 정보확인 웹 제작</li>
                     <br />
                     <span className="blickEff">
                       - 자세한 내용은 포트폴리오 확인해주세요. -

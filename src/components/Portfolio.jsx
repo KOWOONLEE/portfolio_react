@@ -52,7 +52,7 @@ const Portfolio = () => {
                     return (
                       <SwiperSlide>
                         <div
-                          className="SwiperInner"
+                          className="swiperInner"
                           key={projectData[i].id}
                           onClick={() => {
                             navigate(`/project/${project.navigate}`);
@@ -165,10 +165,15 @@ const StyledPortfolio = styled.div`
     object-fit: cover;
     position: relative;
   }
-  .SwiperInner {
+
+  .swiperInner {
     width: 100%;
     padding: 10%;
     background-color: rgba(255, 255, 255, 0.4);
+  }
+  .swiperInner:hover {
+    cursor: pointer;
+    background-color: rgb(250, 231, 243, 0.6);
   }
 
   .defaultImage {
@@ -184,8 +189,6 @@ const StyledPortfolio = styled.div`
     background: linear-gradient(45deg, #ac8bef, #2ddbdc);
     color: transparent;
     background-clip: text;
-  }
-
-  .swiper-pagination-bullet-active {
+    font-weight: bold;
   }
 `;
